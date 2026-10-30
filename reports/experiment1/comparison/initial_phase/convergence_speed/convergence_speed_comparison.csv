@@ -1,0 +1,5 @@
+experiment,avg_episodes_to_converge,avg_final_steps
+eg_ca_exponential_decay,41.0,66.3
+eg_ca_static,160.0,98.1
+eg_kruskal_exponential_decay,65.0,174.2
+eg_kruskal_static,151.5,245.3

@@ -1,0 +1,5 @@
+experiment,N_episodes,mu_cer_avg,sigma_cer_std,sigma2_variance,cer_ci95,ci_lower_95,ci_upper_95,cer_rme_percent
+eg_ca_exponential_decay,320,68.4559,107.5692,11571.1418,11.7861,56.6699,80.242,17.217
+eg_ca_static,320,13.9266,133.6507,17862.5128,14.6438,-0.7172,28.5703,105.1498
+eg_kruskal_exponential_decay,320,-25.6141,279.7283,78247.9111,30.6491,-56.2631,5.035,119.6572
+eg_kruskal_static,320,-100.1431,174.6796,30512.977,19.1392,-119.2823,-81.0039,19.1118

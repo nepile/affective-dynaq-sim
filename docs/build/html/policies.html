@@ -1,0 +1,669 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>policies package &mdash; affective-dynaq 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ui package" href="ui.html" />
+    <link rel="prev" title="maze package" href="maze.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            affective-dynaq
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">affective-dynaq</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html">affect package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html">maze package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">policies package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-policies.base">policies.base module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#policies.base.BasePolicy"><code class="docutils literal notranslate"><span class="pre">BasePolicy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-policies.epsilon_greedy">policies.epsilon_greedy module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#policies.epsilon_greedy.EpsilonGreedyPolicy"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-policies">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#policies.BasePolicy"><code class="docutils literal notranslate"><span class="pre">BasePolicy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#policies.EpsilonGreedyPolicy"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#policies.create_policy"><code class="docutils literal notranslate"><span class="pre">create_policy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">ui package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">affective-dynaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">affective-dynaq</a></li>
+      <li class="breadcrumb-item active">policies package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/policies.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="policies-package">
+<h1>policies package<a class="headerlink" href="#policies-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-policies.base">
+<span id="policies-base-module"></span><h2>policies.base module<a class="headerlink" href="#module-policies.base" title="Link to this heading"></a></h2>
+<p>Base exploration policy interface.</p>
+<p>Provides abstract interface for reinforcement learning action-selection strategies
+supporting static, exponential decay, and affective adaptive modes.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="policies.base.BasePolicy">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">policies.base.</span></span><span class="sig-name descname"><span class="pre">BasePolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'static'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#policies.base.BasePolicy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract base class for exploration policies.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.base.BasePolicy.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#policies.base.BasePolicy.mode" title="Link to this definition"></a></dt>
+<dd><p>Operating mode (‘static’, ‘exponential_decay’, or ‘adaptive_va’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.base.BasePolicy.decay_episode">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">decay_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.base.BasePolicy.decay_episode" title="Link to this definition"></a></dt>
+<dd><p>Update policy parameters according to episode progression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode</strong> (<em>int</em>) – Current episode index (1-based).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.base.BasePolicy.get_param_value">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_param_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#policies.base.BasePolicy.get_param_value" title="Link to this definition"></a></dt>
+<dd><p>Retrieve current primary exploration parameter value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Parameter value (e.g., epsilon, temperature, c).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.base.BasePolicy.reset">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.base.BasePolicy.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset policy parameters back to initial configuration for a new seed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.base.BasePolicy.select_action">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">select_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="agent.html#agent.QTable" title="src.agent.q_table.QTable"><span class="pre">QTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#policies.base.BasePolicy.select_action" title="Link to this definition"></a></dt>
+<dd><p>Select an action based on the state and Q-values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Current discrete state index.</p></li>
+<li><p><strong>q_table</strong> (<a class="reference internal" href="agent.html#agent.q_table.QTable" title="agent.q_table.QTable"><em>QTable</em></a>) – Agent’s action-value table.</p></li>
+<li><p><strong>num_actions</strong> (<em>int</em>) – Number of available actions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected action index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.base.BasePolicy.update_affect">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">update_affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arousal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.base.BasePolicy.update_affect" title="Link to this definition"></a></dt>
+<dd><p>Modulate policy parameters based on Core Affect (Valence and Arousal).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence</strong> (<em>float</em>) – Current Valence V(t) in [-1.0, 1.0].</p></li>
+<li><p><strong>arousal</strong> (<em>float</em>) – Current Arousal A(t) in [-1.0, 1.0].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-policies.epsilon_greedy">
+<span id="policies-epsilon-greedy-module"></span><h2>policies.epsilon_greedy module<a class="headerlink" href="#module-policies.epsilon_greedy" title="Link to this heading"></a></h2>
+<p>Epsilon-Greedy exploration policy implementation.</p>
+<p>Provides action selection with exploration probability epsilon supporting static,
+exponential decay, and adaptive affective modulation modes.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">policies.epsilon_greedy.</span></span><span class="sig-name descname"><span class="pre">EpsilonGreedyPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'static'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decay_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#policies.BasePolicy" title="src.policies.base.BasePolicy"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePolicy</span></code></a></p>
+<p>Epsilon-Greedy exploration strategy.</p>
+<p>Balances exploration (selecting random actions with probability epsilon) and
+exploitation (selecting greedy action maximizing Q-value).</p>
+<dl class="simple">
+<dt>Modes:</dt><dd><ul class="simple">
+<li><p>‘static’: Constant epsilon across all episodes and steps.</p></li>
+<li><p>‘exponential_decay’: Epsilon starts at epsilon_init and decays exponentially
+per episode towards epsilon_min. Resets on new seed.</p></li>
+<li><p>‘adaptive_va’: Epsilon is modulated dynamically based on Valence-Arousal
+emotions (configured for classic_va environment).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.mode" title="Link to this definition"></a></dt>
+<dd><p>Policy mode (‘static’, ‘exponential_decay’, ‘adaptive_va’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon">
+<span class="sig-name descname"><span class="pre">epsilon</span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon" title="Link to this definition"></a></dt>
+<dd><p>Current epsilon exploration probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon_init">
+<span class="sig-name descname"><span class="pre">epsilon_init</span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon_init" title="Link to this definition"></a></dt>
+<dd><p>Initial epsilon value for exponential decay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon_min">
+<span class="sig-name descname"><span class="pre">epsilon_min</span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon_min" title="Link to this definition"></a></dt>
+<dd><p>Lower bound for decaying epsilon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.decay_rate">
+<span class="sig-name descname"><span class="pre">decay_rate</span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.decay_rate" title="Link to this definition"></a></dt>
+<dd><p>Multiplicative decay factor per episode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.rng">
+<span class="sig-name descname"><span class="pre">rng</span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.rng" title="Link to this definition"></a></dt>
+<dd><p>Pseudorandom generator instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>random.Random</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.decay_episode">
+<span class="sig-name descname"><span class="pre">decay_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.decay_episode" title="Link to this definition"></a></dt>
+<dd><p>Decay epsilon exponentially at the end of each episode.</p>
+<dl class="simple">
+<dt>Formula:</dt><dd><p>epsilon = max(epsilon_min, epsilon_init * (decay_rate ** (episode - 1)))</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode</strong> (<em>int</em>) – Current episode index (1-based).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.get_param_value">
+<span class="sig-name descname"><span class="pre">get_param_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.get_param_value" title="Link to this definition"></a></dt>
+<dd><p>Get the current epsilon value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current epsilon.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset epsilon back to initial state when switching independent seeds.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.select_action">
+<span class="sig-name descname"><span class="pre">select_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="agent.html#agent.QTable" title="src.agent.q_table.QTable"><span class="pre">QTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.select_action" title="Link to this definition"></a></dt>
+<dd><p>Select an action using epsilon-greedy strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>q_table</strong> (<a class="reference internal" href="agent.html#agent.q_table.QTable" title="agent.q_table.QTable"><em>QTable</em></a>) – Action-value function table.</p></li>
+<li><p><strong>num_actions</strong> (<em>int</em>) – Total number of discrete actions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected action index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.epsilon_greedy.EpsilonGreedyPolicy.update_affect">
+<span class="sig-name descname"><span class="pre">update_affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arousal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.epsilon_greedy.EpsilonGreedyPolicy.update_affect" title="Link to this definition"></a></dt>
+<dd><p>Modulate epsilon using Valence-Arousal core affect signals.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reserved for ‘adaptive_va’ mode in classic_va environment.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence</strong> (<em>float</em>) – Current Valence V(t) in [-1.0, 1.0].</p></li>
+<li><p><strong>arousal</strong> (<em>float</em>) – Current Arousal A(t) in [-1.0, 1.0].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-policies">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-policies" title="Link to this heading"></a></h2>
+<p>Exploration policies package.</p>
+<p>Provides action-selection strategies including Epsilon-Greedy, UCB,
+Boltzmann Softmax, and Gaussian Thompson Sampling, along with policy instantiation
+factories and mode validation.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="policies.BasePolicy">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">policies.</span></span><span class="sig-name descname"><span class="pre">BasePolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'static'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#policies.BasePolicy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract base class for exploration policies.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.BasePolicy.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#policies.BasePolicy.mode" title="Link to this definition"></a></dt>
+<dd><p>Operating mode (‘static’, ‘exponential_decay’, or ‘adaptive_va’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.BasePolicy.decay_episode">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">decay_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.BasePolicy.decay_episode" title="Link to this definition"></a></dt>
+<dd><p>Update policy parameters according to episode progression.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode</strong> (<em>int</em>) – Current episode index (1-based).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.BasePolicy.get_param_value">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_param_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#policies.BasePolicy.get_param_value" title="Link to this definition"></a></dt>
+<dd><p>Retrieve current primary exploration parameter value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Parameter value (e.g., epsilon, temperature, c).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.BasePolicy.reset">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.BasePolicy.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset policy parameters back to initial configuration for a new seed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.BasePolicy.select_action">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">select_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="agent.html#agent.QTable" title="src.agent.q_table.QTable"><span class="pre">QTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#policies.BasePolicy.select_action" title="Link to this definition"></a></dt>
+<dd><p>Select an action based on the state and Q-values.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Current discrete state index.</p></li>
+<li><p><strong>q_table</strong> (<a class="reference internal" href="agent.html#agent.q_table.QTable" title="agent.q_table.QTable"><em>QTable</em></a>) – Agent’s action-value table.</p></li>
+<li><p><strong>num_actions</strong> (<em>int</em>) – Number of available actions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected action index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.BasePolicy.update_affect">
+<span class="property"><span class="k"><span class="pre">abstractmethod</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">update_affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arousal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.BasePolicy.update_affect" title="Link to this definition"></a></dt>
+<dd><p>Modulate policy parameters based on Core Affect (Valence and Arousal).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence</strong> (<em>float</em>) – Current Valence V(t) in [-1.0, 1.0].</p></li>
+<li><p><strong>arousal</strong> (<em>float</em>) – Current Arousal A(t) in [-1.0, 1.0].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">policies.</span></span><span class="sig-name descname"><span class="pre">EpsilonGreedyPolicy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'static'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">epsilon_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decay_rate</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#policies.EpsilonGreedyPolicy" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#policies.BasePolicy" title="src.policies.base.BasePolicy"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasePolicy</span></code></a></p>
+<p>Epsilon-Greedy exploration strategy.</p>
+<p>Balances exploration (selecting random actions with probability epsilon) and
+exploitation (selecting greedy action maximizing Q-value).</p>
+<dl class="simple">
+<dt>Modes:</dt><dd><ul class="simple">
+<li><p>‘static’: Constant epsilon across all episodes and steps.</p></li>
+<li><p>‘exponential_decay’: Epsilon starts at epsilon_init and decays exponentially
+per episode towards epsilon_min. Resets on new seed.</p></li>
+<li><p>‘adaptive_va’: Epsilon is modulated dynamically based on Valence-Arousal
+emotions (configured for classic_va environment).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.mode">
+<span class="sig-name descname"><span class="pre">mode</span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.mode" title="Link to this definition"></a></dt>
+<dd><p>Policy mode (‘static’, ‘exponential_decay’, ‘adaptive_va’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.epsilon">
+<span class="sig-name descname"><span class="pre">epsilon</span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.epsilon" title="Link to this definition"></a></dt>
+<dd><p>Current epsilon exploration probability.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.epsilon_init">
+<span class="sig-name descname"><span class="pre">epsilon_init</span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.epsilon_init" title="Link to this definition"></a></dt>
+<dd><p>Initial epsilon value for exponential decay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.epsilon_min">
+<span class="sig-name descname"><span class="pre">epsilon_min</span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.epsilon_min" title="Link to this definition"></a></dt>
+<dd><p>Lower bound for decaying epsilon.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.decay_rate">
+<span class="sig-name descname"><span class="pre">decay_rate</span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.decay_rate" title="Link to this definition"></a></dt>
+<dd><p>Multiplicative decay factor per episode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.rng">
+<span class="sig-name descname"><span class="pre">rng</span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.rng" title="Link to this definition"></a></dt>
+<dd><p>Pseudorandom generator instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>random.Random</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.decay_episode">
+<span class="sig-name descname"><span class="pre">decay_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.decay_episode" title="Link to this definition"></a></dt>
+<dd><p>Decay epsilon exponentially at the end of each episode.</p>
+<dl class="simple">
+<dt>Formula:</dt><dd><p>epsilon = max(epsilon_min, epsilon_init * (decay_rate ** (episode - 1)))</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode</strong> (<em>int</em>) – Current episode index (1-based).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.get_param_value">
+<span class="sig-name descname"><span class="pre">get_param_value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.get_param_value" title="Link to this definition"></a></dt>
+<dd><p>Get the current epsilon value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Current epsilon.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset epsilon back to initial state when switching independent seeds.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.select_action">
+<span class="sig-name descname"><span class="pre">select_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">q_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="agent.html#agent.QTable" title="src.agent.q_table.QTable"><span class="pre">QTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.select_action" title="Link to this definition"></a></dt>
+<dd><p>Select an action using epsilon-greedy strategy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>q_table</strong> (<a class="reference internal" href="agent.html#agent.q_table.QTable" title="agent.q_table.QTable"><em>QTable</em></a>) – Action-value function table.</p></li>
+<li><p><strong>num_actions</strong> (<em>int</em>) – Total number of discrete actions.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected action index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="policies.EpsilonGreedyPolicy.update_affect">
+<span class="sig-name descname"><span class="pre">update_affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arousal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#policies.EpsilonGreedyPolicy.update_affect" title="Link to this definition"></a></dt>
+<dd><p>Modulate epsilon using Valence-Arousal core affect signals.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Reserved for ‘adaptive_va’ mode in classic_va environment.</p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence</strong> (<em>float</em>) – Current Valence V(t) in [-1.0, 1.0].</p></li>
+<li><p><strong>arousal</strong> (<em>float</em>) – Current Arousal A(t) in [-1.0, 1.0].</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="policies.create_policy">
+<span class="sig-prename descclassname"><span class="pre">policies.</span></span><span class="sig-name descname"><span class="pre">create_policy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exploration_cfg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">env_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#policies.BasePolicy" title="src.policies.base.BasePolicy"><span class="pre">BasePolicy</span></a></span></span><a class="headerlink" href="#policies.create_policy" title="Link to this definition"></a></dt>
+<dd><p>Instantiate and validate an exploration policy based on configuration.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>exploration_cfg</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Exploration configuration dictionary.</p></li>
+<li><p><strong>env_type</strong> (<em>str</em>) – Environment type (‘classic_va’, ‘standard’, ‘ann’).</p></li>
+<li><p><strong>seed</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – Random seed. Defaults to None.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Configured exploration policy instance.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#policies.BasePolicy" title="policies.BasePolicy">BasePolicy</a></p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If adaptive_va mode is requested for non-classic_va environments,
+    or if the requested strategy is unknown.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="maze.html" class="btn btn-neutral float-left" title="maze package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ui.html" class="btn btn-neutral float-right" title="ui package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Neville Jeremy, Filipus Ferry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

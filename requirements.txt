@@ -1,0 +1,6 @@
+sphinx
+sphinx-rtd-theme
+numpy
+matplotlib
+pillow
+pygame

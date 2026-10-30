@@ -1,0 +1,1036 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>agent package &mdash; affective-dynaq 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="environment package" href="environment.html" />
+    <link rel="prev" title="affect package" href="affect.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            affective-dynaq
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">affective-dynaq</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html">affect package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">agent package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-agent.dyna_q">agent.dyna_q module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent.dyna_q.DynaQAgent"><code class="docutils literal notranslate"><span class="pre">DynaQAgent</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-agent.planning">agent.planning module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent.planning.DynaModel"><code class="docutils literal notranslate"><span class="pre">DynaModel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-agent.q_table">agent.q_table module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent.q_table.QTable"><code class="docutils literal notranslate"><span class="pre">QTable</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-agent">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#agent.DynaModel"><code class="docutils literal notranslate"><span class="pre">DynaModel</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent.DynaQAgent"><code class="docutils literal notranslate"><span class="pre">DynaQAgent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#agent.QTable"><code class="docutils literal notranslate"><span class="pre">QTable</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html">maze package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html">policies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">ui package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">affective-dynaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">affective-dynaq</a></li>
+      <li class="breadcrumb-item active">agent package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/agent.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="agent-package">
+<h1>agent package<a class="headerlink" href="#agent-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-agent.dyna_q">
+<span id="agent-dyna-q-module"></span><h2>agent.dyna_q module<a class="headerlink" href="#module-agent.dyna_q" title="Link to this heading"></a></h2>
+<p>Dyna-Q reinforcement learning agent implementation.</p>
+<p>Implements the tabular Dyna-Q architecture combining direct Q-learning,
+transition model learning, simulated planning sampling, modular exploration
+policies, and learning rate scheduling (Sutton &amp; Barto 1998; Feldmaier &amp; Diepold 2014).</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">agent.dyna_q.</span></span><span class="sig-name descname"><span class="pre">DynaQAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'static'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_decay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planning_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="policies.html#policies.BasePolicy" title="src.policies.base.BasePolicy"><span class="pre">BasePolicy</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.dyna_q.DynaQAgent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Tabular Dyna-Q reinforcement learning agent.</p>
+<p>Combines direct reinforcement learning, environment model learning,
+planning updates from simulated experience, dynamic exploration policies,
+and adaptive learning rate schedules.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.num_states">
+<span class="sig-name descname"><span class="pre">num_states</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.num_states" title="Link to this definition"></a></dt>
+<dd><p>Number of discrete environment states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.num_actions">
+<span class="sig-name descname"><span class="pre">num_actions</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.num_actions" title="Link to this definition"></a></dt>
+<dd><p>Number of actions available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.alpha" title="Link to this definition"></a></dt>
+<dd><p>Current effective learning rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.alpha_mode">
+<span class="sig-name descname"><span class="pre">alpha_mode</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.alpha_mode" title="Link to this definition"></a></dt>
+<dd><p>Learning rate schedule mode (‘static’, ‘exponential_decay’, ‘adaptive_va’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.alpha_init">
+<span class="sig-name descname"><span class="pre">alpha_init</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.alpha_init" title="Link to this definition"></a></dt>
+<dd><p>Initial learning rate for exponential decay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.alpha_min">
+<span class="sig-name descname"><span class="pre">alpha_min</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.alpha_min" title="Link to this definition"></a></dt>
+<dd><p>Floor value for decaying learning rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.alpha_decay">
+<span class="sig-name descname"><span class="pre">alpha_decay</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.alpha_decay" title="Link to this definition"></a></dt>
+<dd><p>Multiplicative decay rate per episode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.gamma" title="Link to this definition"></a></dt>
+<dd><p>Discount rate parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.planning_steps">
+<span class="sig-name descname"><span class="pre">planning_steps</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.planning_steps" title="Link to this definition"></a></dt>
+<dd><p>Number of planning updates per real step (p_steps).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.policy">
+<span class="sig-name descname"><span class="pre">policy</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.policy" title="Link to this definition"></a></dt>
+<dd><p>Exploration strategy policy instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="policies.html#policies.base.BasePolicy" title="policies.base.BasePolicy">BasePolicy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.q_table">
+<span class="sig-name descname"><span class="pre">q_table</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.q_table" title="Link to this definition"></a></dt>
+<dd><p>Internal action-value function table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#agent.q_table.QTable" title="agent.q_table.QTable">QTable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.model" title="Link to this definition"></a></dt>
+<dd><p>Internal environment transition memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#agent.planning.DynaModel" title="agent.planning.DynaModel">DynaModel</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.last_updated_state">
+<span class="sig-name descname"><span class="pre">last_updated_state</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.last_updated_state" title="Link to this definition"></a></dt>
+<dd><p>State index updated in the latest step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.decay_episode">
+<span class="sig-name descname"><span class="pre">decay_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.decay_episode" title="Link to this definition"></a></dt>
+<dd><p>Decay exploration parameter and learning rate after an episode finishes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode</strong> (<em>int</em>) – Completed episode index (1-based).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.epsilon">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">epsilon</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.epsilon" title="Link to this definition"></a></dt>
+<dd><p>Convenience property for current exploration parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.reset" title="Link to this definition"></a></dt>
+<dd><p>Completely reset agent Q-table, model, policy parameters, and learning rate.</p>
+<p>Used when switching between multi-fixed seeds to guarantee run independence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.select_action">
+<span class="sig-name descname"><span class="pre">select_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.select_action" title="Link to this definition"></a></dt>
+<dd><p>Select action using the configured exploration policy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected action index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.update" title="Link to this definition"></a></dt>
+<dd><p>Update Q-table directly, record transition into model, and execute planning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – State before action.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Executed action.</p></li>
+<li><p><strong>reward</strong> (<em>float</em>) – Received reward.</p></li>
+<li><p><strong>next_state</strong> (<em>int</em>) – Resulting state.</p></li>
+<li><p><strong>terminated</strong> (<em>bool</em>) – Whether the episode ended at next_state.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.dyna_q.DynaQAgent.update_affect">
+<span class="sig-name descname"><span class="pre">update_affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arousal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.dyna_q.DynaQAgent.update_affect" title="Link to this definition"></a></dt>
+<dd><p>Propagate Core Affect signals to policy and learning rate modules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence</strong> (<em>float</em>) – Current Valence V(t).</p></li>
+<li><p><strong>arousal</strong> (<em>float</em>) – Current Arousal A(t).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.planning">
+<span id="agent-planning-module"></span><h2>agent.planning module<a class="headerlink" href="#module-agent.planning" title="Link to this heading"></a></h2>
+<p>Dyna model learning and simulated planning memory.</p>
+<p>Stores environment transition dynamics experienced by the agent and performs
+planning updates via random sampling of previously experienced state-action pairs.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.planning.DynaModel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">agent.planning.</span></span><span class="sig-name descname"><span class="pre">DynaModel</span></span><a class="headerlink" href="#agent.planning.DynaModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Deterministic environment transition model for Dyna-Q planning.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.planning.DynaModel.transitions">
+<span class="sig-name descname"><span class="pre">transitions</span></span><a class="headerlink" href="#agent.planning.DynaModel.transitions" title="Link to this definition"></a></dt>
+<dd><p>Mapping from (state, action) -&gt; (reward, next_state).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[Tuple[int, int], Tuple[float, int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.planning.DynaModel.visited_states">
+<span class="sig-name descname"><span class="pre">visited_states</span></span><a class="headerlink" href="#agent.planning.DynaModel.visited_states" title="Link to this definition"></a></dt>
+<dd><p>List of states previously encountered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.planning.DynaModel.actions_taken">
+<span class="sig-name descname"><span class="pre">actions_taken</span></span><a class="headerlink" href="#agent.planning.DynaModel.actions_taken" title="Link to this definition"></a></dt>
+<dd><p>Set of actions taken in each visited state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[int, Set[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.planning.DynaModel.plan">
+<span class="sig-name descname"><span class="pre">plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#agent.QTable" title="src.agent.q_table.QTable"><span class="pre">QTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">planning_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Random</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.planning.DynaModel.plan" title="Link to this definition"></a></dt>
+<dd><p>Execute Dyna-Q planning updates using simulated experience.</p>
+<p>Randomly samples previously visited (state, action) pairs from memory
+and applies Q-learning update (Eq. 1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_table</strong> (<a class="reference internal" href="#agent.q_table.QTable" title="agent.q_table.QTable"><em>QTable</em></a>) – The agent’s Q-table to update.</p></li>
+<li><p><strong>planning_steps</strong> (<em>int</em>) – Number of simulated transitions to replay (p_steps).</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Step-size / learning rate.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – Discount rate.</p></li>
+<li><p><strong>rng</strong> (<em>Optional</em><em>[</em><em>random.Random</em><em>]</em><em>, </em><em>optional</em>) – Random number generator.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.planning.DynaModel.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.planning.DynaModel.reset" title="Link to this definition"></a></dt>
+<dd><p>Clear all stored transitions and model history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.planning.DynaModel.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.planning.DynaModel.update" title="Link to this definition"></a></dt>
+<dd><p>Record an observed environment transition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Origin state index.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Executed action index.</p></li>
+<li><p><strong>reward</strong> (<em>float</em>) – Observed reward.</p></li>
+<li><p><strong>next_state</strong> (<em>int</em>) – Resulting state index.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent.q_table">
+<span id="agent-q-table-module"></span><h2>agent.q_table module<a class="headerlink" href="#module-agent.q_table" title="Link to this heading"></a></h2>
+<p>Tabular Q-value storage for reinforcement learning.</p>
+<p>Manages state-action value table Q(s, a) with initialization, lookup, and updates.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.q_table.QTable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">agent.q_table.</span></span><span class="sig-name descname"><span class="pre">QTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.q_table.QTable" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Tabular state-action value function representation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.q_table.QTable.num_states">
+<span class="sig-name descname"><span class="pre">num_states</span></span><a class="headerlink" href="#agent.q_table.QTable.num_states" title="Link to this definition"></a></dt>
+<dd><p>Number of distinct states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.q_table.QTable.num_actions">
+<span class="sig-name descname"><span class="pre">num_actions</span></span><a class="headerlink" href="#agent.q_table.QTable.num_actions" title="Link to this definition"></a></dt>
+<dd><p>Number of actions available per state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.q_table.QTable.table">
+<span class="sig-name descname"><span class="pre">table</span></span><a class="headerlink" href="#agent.q_table.QTable.table" title="Link to this definition"></a></dt>
+<dd><p>Mapping from (state, action) to Q-value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[Tuple[int, int], float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.q_table.QTable.default_value">
+<span class="sig-name descname"><span class="pre">default_value</span></span><a class="headerlink" href="#agent.q_table.QTable.default_value" title="Link to this definition"></a></dt>
+<dd><p>Default initial Q-value (typically 0.0).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.q_table.QTable.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#agent.q_table.QTable.get" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the Q-value for a given state-action pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Action index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Estimated action-value Q(s, a).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.q_table.QTable.get_action_values">
+<span class="sig-name descname"><span class="pre">get_action_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#agent.q_table.QTable.get_action_values" title="Link to this definition"></a></dt>
+<dd><p>Get all action Q-values for a given state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of Q-values for actions 0 to num_actions - 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.q_table.QTable.get_best_action">
+<span class="sig-name descname"><span class="pre">get_best_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Random</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#agent.q_table.QTable.get_best_action" title="Link to this definition"></a></dt>
+<dd><p>Get the greedy action with highest Q-value, breaking ties randomly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>rng</strong> (<em>Optional</em><em>[</em><em>random.Random</em><em>]</em><em>, </em><em>optional</em>) – Random generator for tie-breaking.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Action index with highest Q-value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.q_table.QTable.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.q_table.QTable.reset" title="Link to this definition"></a></dt>
+<dd><p>Clear all learned Q-values back to the initial default value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.q_table.QTable.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.q_table.QTable.set" title="Link to this definition"></a></dt>
+<dd><p>Set the Q-value for a given state-action pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Action index.</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – New Q-value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-agent">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-agent" title="Link to this heading"></a></h2>
+<p>Agent package for reinforcement learning.</p>
+<p>Provides Dyna-Q agent, planning transition model, and Q-table structures.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.DynaModel">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">agent.</span></span><span class="sig-name descname"><span class="pre">DynaModel</span></span><a class="headerlink" href="#agent.DynaModel" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Deterministic environment transition model for Dyna-Q planning.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaModel.transitions">
+<span class="sig-name descname"><span class="pre">transitions</span></span><a class="headerlink" href="#agent.DynaModel.transitions" title="Link to this definition"></a></dt>
+<dd><p>Mapping from (state, action) -&gt; (reward, next_state).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[Tuple[int, int], Tuple[float, int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaModel.visited_states">
+<span class="sig-name descname"><span class="pre">visited_states</span></span><a class="headerlink" href="#agent.DynaModel.visited_states" title="Link to this definition"></a></dt>
+<dd><p>List of states previously encountered.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaModel.actions_taken">
+<span class="sig-name descname"><span class="pre">actions_taken</span></span><a class="headerlink" href="#agent.DynaModel.actions_taken" title="Link to this definition"></a></dt>
+<dd><p>Set of actions taken in each visited state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[int, Set[int]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaModel.plan">
+<span class="sig-name descname"><span class="pre">plan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">q_table</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#agent.QTable" title="src.agent.q_table.QTable"><span class="pre">QTable</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">planning_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Random</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaModel.plan" title="Link to this definition"></a></dt>
+<dd><p>Execute Dyna-Q planning updates using simulated experience.</p>
+<p>Randomly samples previously visited (state, action) pairs from memory
+and applies Q-learning update (Eq. 1).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>q_table</strong> (<a class="reference internal" href="#agent.QTable" title="agent.QTable"><em>QTable</em></a>) – The agent’s Q-table to update.</p></li>
+<li><p><strong>planning_steps</strong> (<em>int</em>) – Number of simulated transitions to replay (p_steps).</p></li>
+<li><p><strong>alpha</strong> (<em>float</em>) – Step-size / learning rate.</p></li>
+<li><p><strong>gamma</strong> (<em>float</em>) – Discount rate.</p></li>
+<li><p><strong>rng</strong> (<em>Optional</em><em>[</em><em>random.Random</em><em>]</em><em>, </em><em>optional</em>) – Random number generator.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaModel.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaModel.reset" title="Link to this definition"></a></dt>
+<dd><p>Clear all stored transitions and model history.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaModel.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaModel.update" title="Link to this definition"></a></dt>
+<dd><p>Record an observed environment transition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Origin state index.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Executed action index.</p></li>
+<li><p><strong>reward</strong> (<em>float</em>) – Observed reward.</p></li>
+<li><p><strong>next_state</strong> (<em>int</em>) – Resulting state index.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.DynaQAgent">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">agent.</span></span><span class="sig-name descname"><span class="pre">DynaQAgent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.01</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_mode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'static'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_init</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_min</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.005</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alpha_decay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.95</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">planning_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">50</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">policy</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="policies.html#policies.BasePolicy" title="src.policies.base.BasePolicy"><span class="pre">BasePolicy</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.DynaQAgent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Tabular Dyna-Q reinforcement learning agent.</p>
+<p>Combines direct reinforcement learning, environment model learning,
+planning updates from simulated experience, dynamic exploration policies,
+and adaptive learning rate schedules.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.num_states">
+<span class="sig-name descname"><span class="pre">num_states</span></span><a class="headerlink" href="#agent.DynaQAgent.num_states" title="Link to this definition"></a></dt>
+<dd><p>Number of discrete environment states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.num_actions">
+<span class="sig-name descname"><span class="pre">num_actions</span></span><a class="headerlink" href="#agent.DynaQAgent.num_actions" title="Link to this definition"></a></dt>
+<dd><p>Number of actions available.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.alpha">
+<span class="sig-name descname"><span class="pre">alpha</span></span><a class="headerlink" href="#agent.DynaQAgent.alpha" title="Link to this definition"></a></dt>
+<dd><p>Current effective learning rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.alpha_mode">
+<span class="sig-name descname"><span class="pre">alpha_mode</span></span><a class="headerlink" href="#agent.DynaQAgent.alpha_mode" title="Link to this definition"></a></dt>
+<dd><p>Learning rate schedule mode (‘static’, ‘exponential_decay’, ‘adaptive_va’).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.alpha_init">
+<span class="sig-name descname"><span class="pre">alpha_init</span></span><a class="headerlink" href="#agent.DynaQAgent.alpha_init" title="Link to this definition"></a></dt>
+<dd><p>Initial learning rate for exponential decay.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.alpha_min">
+<span class="sig-name descname"><span class="pre">alpha_min</span></span><a class="headerlink" href="#agent.DynaQAgent.alpha_min" title="Link to this definition"></a></dt>
+<dd><p>Floor value for decaying learning rate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.alpha_decay">
+<span class="sig-name descname"><span class="pre">alpha_decay</span></span><a class="headerlink" href="#agent.DynaQAgent.alpha_decay" title="Link to this definition"></a></dt>
+<dd><p>Multiplicative decay rate per episode.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.gamma">
+<span class="sig-name descname"><span class="pre">gamma</span></span><a class="headerlink" href="#agent.DynaQAgent.gamma" title="Link to this definition"></a></dt>
+<dd><p>Discount rate parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.planning_steps">
+<span class="sig-name descname"><span class="pre">planning_steps</span></span><a class="headerlink" href="#agent.DynaQAgent.planning_steps" title="Link to this definition"></a></dt>
+<dd><p>Number of planning updates per real step (p_steps).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.policy">
+<span class="sig-name descname"><span class="pre">policy</span></span><a class="headerlink" href="#agent.DynaQAgent.policy" title="Link to this definition"></a></dt>
+<dd><p>Exploration strategy policy instance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="policies.html#policies.base.BasePolicy" title="policies.base.BasePolicy">BasePolicy</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.q_table">
+<span class="sig-name descname"><span class="pre">q_table</span></span><a class="headerlink" href="#agent.DynaQAgent.q_table" title="Link to this definition"></a></dt>
+<dd><p>Internal action-value function table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#agent.QTable" title="agent.QTable">QTable</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#agent.DynaQAgent.model" title="Link to this definition"></a></dt>
+<dd><p>Internal environment transition memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#agent.DynaModel" title="agent.DynaModel">DynaModel</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.DynaQAgent.last_updated_state">
+<span class="sig-name descname"><span class="pre">last_updated_state</span></span><a class="headerlink" href="#agent.DynaQAgent.last_updated_state" title="Link to this definition"></a></dt>
+<dd><p>State index updated in the latest step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaQAgent.decay_episode">
+<span class="sig-name descname"><span class="pre">decay_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">episode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaQAgent.decay_episode" title="Link to this definition"></a></dt>
+<dd><p>Decay exploration parameter and learning rate after an episode finishes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>episode</strong> (<em>int</em>) – Completed episode index (1-based).</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="agent.DynaQAgent.epsilon">
+<span class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">epsilon</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">float</span></span><a class="headerlink" href="#agent.DynaQAgent.epsilon" title="Link to this definition"></a></dt>
+<dd><p>Convenience property for current exploration parameter.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaQAgent.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaQAgent.reset" title="Link to this definition"></a></dt>
+<dd><p>Completely reset agent Q-table, model, policy parameters, and learning rate.</p>
+<p>Used when switching between multi-fixed seeds to guarantee run independence.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaQAgent.select_action">
+<span class="sig-name descname"><span class="pre">select_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#agent.DynaQAgent.select_action" title="Link to this definition"></a></dt>
+<dd><p>Select action using the configured exploration policy.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Selected action index.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaQAgent.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reward</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">next_state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">terminated</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaQAgent.update" title="Link to this definition"></a></dt>
+<dd><p>Update Q-table directly, record transition into model, and execute planning.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – State before action.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Executed action.</p></li>
+<li><p><strong>reward</strong> (<em>float</em>) – Received reward.</p></li>
+<li><p><strong>next_state</strong> (<em>int</em>) – Resulting state.</p></li>
+<li><p><strong>terminated</strong> (<em>bool</em>) – Whether the episode ended at next_state.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.DynaQAgent.update_affect">
+<span class="sig-name descname"><span class="pre">update_affect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">valence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">arousal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.DynaQAgent.update_affect" title="Link to this definition"></a></dt>
+<dd><p>Propagate Core Affect signals to policy and learning rate modules.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>valence</strong> (<em>float</em>) – Current Valence V(t).</p></li>
+<li><p><strong>arousal</strong> (<em>float</em>) – Current Arousal A(t).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="agent.QTable">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">agent.</span></span><span class="sig-name descname"><span class="pre">QTable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_states</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">num_actions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#agent.QTable" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Tabular state-action value function representation.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.QTable.num_states">
+<span class="sig-name descname"><span class="pre">num_states</span></span><a class="headerlink" href="#agent.QTable.num_states" title="Link to this definition"></a></dt>
+<dd><p>Number of distinct states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.QTable.num_actions">
+<span class="sig-name descname"><span class="pre">num_actions</span></span><a class="headerlink" href="#agent.QTable.num_actions" title="Link to this definition"></a></dt>
+<dd><p>Number of actions available per state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.QTable.table">
+<span class="sig-name descname"><span class="pre">table</span></span><a class="headerlink" href="#agent.QTable.table" title="Link to this definition"></a></dt>
+<dd><p>Mapping from (state, action) to Q-value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[Tuple[int, int], float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="agent.QTable.default_value">
+<span class="sig-name descname"><span class="pre">default_value</span></span><a class="headerlink" href="#agent.QTable.default_value" title="Link to this definition"></a></dt>
+<dd><p>Default initial Q-value (typically 0.0).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.QTable.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#agent.QTable.get" title="Link to this definition"></a></dt>
+<dd><p>Retrieve the Q-value for a given state-action pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Action index.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Estimated action-value Q(s, a).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.QTable.get_action_values">
+<span class="sig-name descname"><span class="pre">get_action_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#agent.QTable.get_action_values" title="Link to this definition"></a></dt>
+<dd><p>Get all action Q-values for a given state.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of Q-values for actions 0 to num_actions - 1.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>List[float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.QTable.get_best_action">
+<span class="sig-name descname"><span class="pre">get_best_action</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rng</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Random</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#agent.QTable.get_best_action" title="Link to this definition"></a></dt>
+<dd><p>Get the greedy action with highest Q-value, breaking ties randomly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>rng</strong> (<em>Optional</em><em>[</em><em>random.Random</em><em>]</em><em>, </em><em>optional</em>) – Random generator for tie-breaking.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Action index with highest Q-value.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.QTable.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.QTable.reset" title="Link to this definition"></a></dt>
+<dd><p>Clear all learned Q-values back to the initial default value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="agent.QTable.set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">action</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#agent.QTable.set" title="Link to this definition"></a></dt>
+<dd><p>Set the Q-value for a given state-action pair.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>state</strong> (<em>int</em>) – Discrete state index.</p></li>
+<li><p><strong>action</strong> (<em>int</em>) – Action index.</p></li>
+<li><p><strong>value</strong> (<em>float</em>) – New Q-value.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="affect.html" class="btn btn-neutral float-left" title="affect package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="environment.html" class="btn btn-neutral float-right" title="environment package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Neville Jeremy, Filipus Ferry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

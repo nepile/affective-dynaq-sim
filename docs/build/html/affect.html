@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>affect package &mdash; affective-dynaq 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="agent package" href="agent.html" />
+    <link rel="prev" title="main module" href="main.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            affective-dynaq
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">affective-dynaq</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">affect package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-affect.va_ann">affect.va_ann module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-affect.va_classic">affect.va_classic module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#affect.va_classic.ClassicValenceArousal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-affect">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#affect.ClassicValenceArousal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html">maze package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html">policies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">ui package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">affective-dynaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">affective-dynaq</a></li>
+      <li class="breadcrumb-item active">affect package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/affect.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="affect-package">
+<h1>affect package<a class="headerlink" href="#affect-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-affect.va_ann">
+<span id="affect-va-ann-module"></span><h2>affect.va_ann module<a class="headerlink" href="#module-affect.va_ann" title="Link to this heading"></a></h2>
+</section>
+<section id="module-affect.va_classic">
+<span id="affect-va-classic-module"></span><h2>affect.va_classic module<a class="headerlink" href="#module-affect.va_classic" title="Link to this heading"></a></h2>
+<p>Classic Valence-Arousal dimensional emotion model.</p>
+<p>Implements the discrete dynamical frequency system and Core Affect calculations
+from Feldmaier and Diepold (2014): “Path-finding Using Reinforcement Learning
+and Affective States”.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">affect.va_classic.</span></span><span class="sig-name descname"><span class="pre">ClassicValenceArousal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Valence-Arousal emotion model based on Feldmaier and Diepold (2014).</p>
+<dl class="simple">
+<dt>Maintains four short-term memory frequency variables:</dt><dd><ul class="simple">
+<li><p>f_col: Frequency of wall collisions.</p></li>
+<li><p>f_dir: Frequency of action direction changes.</p></li>
+<li><p>f_goal: Frequency of target goal visibility.</p></li>
+<li><p>f_right: Frequency of moving in the right direction (away from start).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.nu">
+<span class="sig-name descname"><span class="pre">nu</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.nu" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for collision frequency update (default: 0.2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.theta1">
+<span class="sig-name descname"><span class="pre">theta1</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.theta1" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for direction change update (default: 0.2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.theta2">
+<span class="sig-name descname"><span class="pre">theta2</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.theta2" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for goal in sight update (default: 0.2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.kappa">
+<span class="sig-name descname"><span class="pre">kappa</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.kappa" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for right direction update (default: 0.15).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.f_col">
+<span class="sig-name descname"><span class="pre">f_col</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.f_col" title="Link to this definition"></a></dt>
+<dd><p>Current collision frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.f_dir">
+<span class="sig-name descname"><span class="pre">f_dir</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.f_dir" title="Link to this definition"></a></dt>
+<dd><p>Current direction change frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.f_goal">
+<span class="sig-name descname"><span class="pre">f_goal</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.f_goal" title="Link to this definition"></a></dt>
+<dd><p>Current goal in sight frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.f_right">
+<span class="sig-name descname"><span class="pre">f_right</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.f_right" title="Link to this definition"></a></dt>
+<dd><p>Current right direction frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.valence">
+<span class="sig-name descname"><span class="pre">valence</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.valence" title="Link to this definition"></a></dt>
+<dd><p>Current Valence V(t) in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.arousal">
+<span class="sig-name descname"><span class="pre">arousal</span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.arousal" title="Link to this definition"></a></dt>
+<dd><p>Current Arousal A(t) in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.get_quadrant">
+<span class="sig-name descname"><span class="pre">get_quadrant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.get_quadrant" title="Link to this definition"></a></dt>
+<dd><p>Determine the emotional quadrant in the Valence-Arousal core affect plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>One of ‘Q1’ (Excited/Happy), ‘Q2’ (Relaxed/Calm),</dt><dd><p>’Q3’ (Sad/Depressed), or ‘Q4’ (Anxious/Fearful).</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.get_quadrant_label">
+<span class="sig-name descname"><span class="pre">get_quadrant_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.get_quadrant_label" title="Link to this definition"></a></dt>
+<dd><p>Get descriptive psychological label for the current quadrant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Affect label (‘Excited/Happy’, ‘Relaxed/Calm’, ‘Sad/Depressed’, ‘Anxious/Fearful’).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset all frequency values and emotion coordinates to initial values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.va_classic.ClassicValenceArousal.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_changed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_in_sight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_increasing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#affect.va_classic.ClassicValenceArousal.update" title="Link to this definition"></a></dt>
+<dd><p>Update discrete dynamical frequencies and compute Core Affect (V, A).</p>
+<dl class="simple">
+<dt>Equations from Feldmaier &amp; Diepold (2014):</dt><dd><p>f_col(t)   = f_col(t-1) + ( (1 if c else -1) - f_col(t-1) ) * nu
+f_dir(t)   = f_dir(t-1) + ( (1 if d else -1) - f_dir(t-1) ) * theta1
+f_goal(t)  = f_goal(t-1) + ( (1 if g else -1) - f_goal(t-1) ) * theta2
+f_right(t) = f_right(t-1) + ( (1 if i else -1) - f_right(t-1) ) * kappa
+A(t) = (f_dir + f_col) / 2 if g == 0 else (f_dir + f_col + f_goal) / 3
+V(t) = (f_goal + f_right) / 2</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collision</strong> (<em>bool</em>) – Whether agent collided with a wall in current step (c).</p></li>
+<li><p><strong>dir_changed</strong> (<em>bool</em>) – Whether current action changed from previous action (d).</p></li>
+<li><p><strong>goal_in_sight</strong> (<em>bool</em>) – Whether unblocked line of sight exists to goal (g).</p></li>
+<li><p><strong>distance_increasing</strong> (<em>bool</em>) – Whether distance to start increased (i = 1 or -1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing updated valence, arousal, and frequencies.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-affect">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-affect" title="Link to this heading"></a></h2>
+<p>Affective computing and emotional model package.</p>
+<p>Provides models for computing Valence-Arousal core affect dynamics
+from sensory and reinforcement learning states.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">affect.</span></span><span class="sig-name descname"><span class="pre">ClassicValenceArousal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kappa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_col</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_goal</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">init_f_right</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#affect.ClassicValenceArousal" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Valence-Arousal emotion model based on Feldmaier and Diepold (2014).</p>
+<dl class="simple">
+<dt>Maintains four short-term memory frequency variables:</dt><dd><ul class="simple">
+<li><p>f_col: Frequency of wall collisions.</p></li>
+<li><p>f_dir: Frequency of action direction changes.</p></li>
+<li><p>f_goal: Frequency of target goal visibility.</p></li>
+<li><p>f_right: Frequency of moving in the right direction (away from start).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.nu">
+<span class="sig-name descname"><span class="pre">nu</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.nu" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for collision frequency update (default: 0.2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.theta1">
+<span class="sig-name descname"><span class="pre">theta1</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.theta1" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for direction change update (default: 0.2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.theta2">
+<span class="sig-name descname"><span class="pre">theta2</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.theta2" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for goal in sight update (default: 0.2).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.kappa">
+<span class="sig-name descname"><span class="pre">kappa</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.kappa" title="Link to this definition"></a></dt>
+<dd><p>Slope factor for right direction update (default: 0.15).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.f_col">
+<span class="sig-name descname"><span class="pre">f_col</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.f_col" title="Link to this definition"></a></dt>
+<dd><p>Current collision frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.f_dir">
+<span class="sig-name descname"><span class="pre">f_dir</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.f_dir" title="Link to this definition"></a></dt>
+<dd><p>Current direction change frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.f_goal">
+<span class="sig-name descname"><span class="pre">f_goal</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.f_goal" title="Link to this definition"></a></dt>
+<dd><p>Current goal in sight frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.f_right">
+<span class="sig-name descname"><span class="pre">f_right</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.f_right" title="Link to this definition"></a></dt>
+<dd><p>Current right direction frequency in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.valence">
+<span class="sig-name descname"><span class="pre">valence</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.valence" title="Link to this definition"></a></dt>
+<dd><p>Current Valence V(t) in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.arousal">
+<span class="sig-name descname"><span class="pre">arousal</span></span><a class="headerlink" href="#affect.ClassicValenceArousal.arousal" title="Link to this definition"></a></dt>
+<dd><p>Current Arousal A(t) in [-1.0, 1.0].</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.get_quadrant">
+<span class="sig-name descname"><span class="pre">get_quadrant</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#affect.ClassicValenceArousal.get_quadrant" title="Link to this definition"></a></dt>
+<dd><p>Determine the emotional quadrant in the Valence-Arousal core affect plane.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p><dl class="simple">
+<dt>One of ‘Q1’ (Excited/Happy), ‘Q2’ (Relaxed/Calm),</dt><dd><p>’Q3’ (Sad/Depressed), or ‘Q4’ (Anxious/Fearful).</p>
+</dd>
+</dl>
+</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.get_quadrant_label">
+<span class="sig-name descname"><span class="pre">get_quadrant_label</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#affect.ClassicValenceArousal.get_quadrant_label" title="Link to this definition"></a></dt>
+<dd><p>Get descriptive psychological label for the current quadrant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Affect label (‘Excited/Happy’, ‘Relaxed/Calm’, ‘Sad/Depressed’, ‘Anxious/Fearful’).</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.reset">
+<span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#affect.ClassicValenceArousal.reset" title="Link to this definition"></a></dt>
+<dd><p>Reset all frequency values and emotion coordinates to initial values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="affect.ClassicValenceArousal.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">collision</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dir_changed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">goal_in_sight</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance_increasing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#affect.ClassicValenceArousal.update" title="Link to this definition"></a></dt>
+<dd><p>Update discrete dynamical frequencies and compute Core Affect (V, A).</p>
+<dl class="simple">
+<dt>Equations from Feldmaier &amp; Diepold (2014):</dt><dd><p>f_col(t)   = f_col(t-1) + ( (1 if c else -1) - f_col(t-1) ) * nu
+f_dir(t)   = f_dir(t-1) + ( (1 if d else -1) - f_dir(t-1) ) * theta1
+f_goal(t)  = f_goal(t-1) + ( (1 if g else -1) - f_goal(t-1) ) * theta2
+f_right(t) = f_right(t-1) + ( (1 if i else -1) - f_right(t-1) ) * kappa
+A(t) = (f_dir + f_col) / 2 if g == 0 else (f_dir + f_col + f_goal) / 3
+V(t) = (f_goal + f_right) / 2</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>collision</strong> (<em>bool</em>) – Whether agent collided with a wall in current step (c).</p></li>
+<li><p><strong>dir_changed</strong> (<em>bool</em>) – Whether current action changed from previous action (d).</p></li>
+<li><p><strong>goal_in_sight</strong> (<em>bool</em>) – Whether unblocked line of sight exists to goal (g).</p></li>
+<li><p><strong>distance_increasing</strong> (<em>bool</em>) – Whether distance to start increased (i = 1 or -1).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing updated valence, arousal, and frequencies.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, float]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="main.html" class="btn btn-neutral float-left" title="main module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="agent.html" class="btn btn-neutral float-right" title="agent package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Neville Jeremy, Filipus Ferry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+seed,N_episodes,CER_avg,CER_std,abs_CER_avg,CER_cv_percent
+1,40,59.855,20.4763,59.855,34.2098
+3,40,77.79,6.9727,77.79,8.9634
+Overall (Combined),80,68.8225,17.7303,68.8225,25.7624

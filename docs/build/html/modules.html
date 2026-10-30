@@ -1,0 +1,572 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>affective-dynaq &mdash; affective-dynaq 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="main module" href="main.html" />
+    <link rel="prev" title="Affective Dyna-Q GridWorld Simulator Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            affective-dynaq
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">affective-dynaq</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html">affect package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html">evaluation package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html">maze package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html">policies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">ui package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">affective-dynaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">affective-dynaq</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/modules.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="affective-dynaq">
+<h1>affective-dynaq<a class="headerlink" href="#affective-dynaq" title="Link to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="main.html">main module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.discover_config_files"><code class="docutils literal notranslate"><span class="pre">discover_config_files()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.is_file_excluded"><code class="docutils literal notranslate"><span class="pre">is_file_excluded()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.parse_config"><code class="docutils literal notranslate"><span class="pre">parse_config()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="main.html#main.run_single_config"><code class="docutils literal notranslate"><span class="pre">run_single_config()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="affect.html">affect package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="affect.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html#module-affect.va_ann">affect.va_ann module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html#module-affect.va_classic">affect.va_classic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.nu"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.nu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.theta1"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.theta1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.theta2"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.theta2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.kappa"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.kappa</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.f_col"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_col</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.f_dir"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.f_goal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_goal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.f_right"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_right</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.valence"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.valence</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.arousal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.arousal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.get_quadrant"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.get_quadrant()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.get_quadrant_label"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.get_quadrant_label()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.reset"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.va_classic.ClassicValenceArousal.update"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html#module-affect">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.nu"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.nu</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.theta1"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.theta1</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.theta2"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.theta2</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.kappa"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.kappa</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.f_col"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_col</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.f_dir"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_dir</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.f_goal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_goal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.f_right"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.f_right</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.valence"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.valence</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.arousal"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.arousal</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.get_quadrant"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.get_quadrant()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.get_quadrant_label"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.get_quadrant_label()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.reset"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="affect.html#affect.ClassicValenceArousal.update"><code class="docutils literal notranslate"><span class="pre">ClassicValenceArousal.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="agent.html">agent package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="agent.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html#module-agent.dyna_q">agent.dyna_q module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent"><code class="docutils literal notranslate"><span class="pre">DynaQAgent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.num_states"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.num_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.num_actions"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.num_actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.alpha"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.alpha_mode"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.alpha_init"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.alpha_min"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.alpha_decay"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_decay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.gamma"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.gamma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.planning_steps"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.planning_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.policy"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.policy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.q_table"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.q_table</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.model"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.last_updated_state"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.last_updated_state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.decay_episode"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.decay_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.epsilon"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.epsilon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.reset"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.select_action"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.select_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.update"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.dyna_q.DynaQAgent.update_affect"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.update_affect()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html#module-agent.planning">agent.planning module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agent.html#agent.planning.DynaModel"><code class="docutils literal notranslate"><span class="pre">DynaModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.planning.DynaModel.transitions"><code class="docutils literal notranslate"><span class="pre">DynaModel.transitions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.planning.DynaModel.visited_states"><code class="docutils literal notranslate"><span class="pre">DynaModel.visited_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.planning.DynaModel.actions_taken"><code class="docutils literal notranslate"><span class="pre">DynaModel.actions_taken</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.planning.DynaModel.plan"><code class="docutils literal notranslate"><span class="pre">DynaModel.plan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.planning.DynaModel.reset"><code class="docutils literal notranslate"><span class="pre">DynaModel.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.planning.DynaModel.update"><code class="docutils literal notranslate"><span class="pre">DynaModel.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html#module-agent.q_table">agent.q_table module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agent.html#agent.q_table.QTable"><code class="docutils literal notranslate"><span class="pre">QTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.num_states"><code class="docutils literal notranslate"><span class="pre">QTable.num_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.num_actions"><code class="docutils literal notranslate"><span class="pre">QTable.num_actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.table"><code class="docutils literal notranslate"><span class="pre">QTable.table</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.default_value"><code class="docutils literal notranslate"><span class="pre">QTable.default_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.get"><code class="docutils literal notranslate"><span class="pre">QTable.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.get_action_values"><code class="docutils literal notranslate"><span class="pre">QTable.get_action_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.get_best_action"><code class="docutils literal notranslate"><span class="pre">QTable.get_best_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.reset"><code class="docutils literal notranslate"><span class="pre">QTable.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.q_table.QTable.set"><code class="docutils literal notranslate"><span class="pre">QTable.set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html#module-agent">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="agent.html#agent.DynaModel"><code class="docutils literal notranslate"><span class="pre">DynaModel</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaModel.transitions"><code class="docutils literal notranslate"><span class="pre">DynaModel.transitions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaModel.visited_states"><code class="docutils literal notranslate"><span class="pre">DynaModel.visited_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaModel.actions_taken"><code class="docutils literal notranslate"><span class="pre">DynaModel.actions_taken</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaModel.plan"><code class="docutils literal notranslate"><span class="pre">DynaModel.plan()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaModel.reset"><code class="docutils literal notranslate"><span class="pre">DynaModel.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaModel.update"><code class="docutils literal notranslate"><span class="pre">DynaModel.update()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agent.html#agent.DynaQAgent"><code class="docutils literal notranslate"><span class="pre">DynaQAgent</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.num_states"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.num_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.num_actions"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.num_actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.alpha"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.alpha_mode"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.alpha_init"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.alpha_min"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.alpha_decay"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.alpha_decay</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.gamma"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.gamma</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.planning_steps"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.planning_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.policy"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.policy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.q_table"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.q_table</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.model"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.last_updated_state"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.last_updated_state</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.decay_episode"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.decay_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.epsilon"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.epsilon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.reset"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.select_action"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.select_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.update"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.update()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.DynaQAgent.update_affect"><code class="docutils literal notranslate"><span class="pre">DynaQAgent.update_affect()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="agent.html#agent.QTable"><code class="docutils literal notranslate"><span class="pre">QTable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.num_states"><code class="docutils literal notranslate"><span class="pre">QTable.num_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.num_actions"><code class="docutils literal notranslate"><span class="pre">QTable.num_actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.table"><code class="docutils literal notranslate"><span class="pre">QTable.table</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.default_value"><code class="docutils literal notranslate"><span class="pre">QTable.default_value</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.get"><code class="docutils literal notranslate"><span class="pre">QTable.get()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.get_action_values"><code class="docutils literal notranslate"><span class="pre">QTable.get_action_values()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.get_best_action"><code class="docutils literal notranslate"><span class="pre">QTable.get_best_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.reset"><code class="docutils literal notranslate"><span class="pre">QTable.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="agent.html#agent.QTable.set"><code class="docutils literal notranslate"><span class="pre">QTable.set()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="environment.html">environment package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#module-environment.base_gridworld">environment.base_gridworld module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.height"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.width"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.grid"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.start_pos"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.start_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.goal_pos"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.goal_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.agent_pos"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.agent_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.step_reward"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.step_reward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.goal_reward"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.goal_reward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.collision_reward"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.collision_reward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.max_steps"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.max_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.current_step"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.current_step</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.ACTIONS"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.ACTIONS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.ACTION_NAMES"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.ACTION_NAMES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.coord_to_state"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.coord_to_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.is_valid_position"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.is_valid_position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.num_actions"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.num_actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.num_states"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.num_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.reset"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.state_to_coord"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.state_to_coord()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.base_gridworld.BaseGridWorld.step"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#module-environment.gridworld_standard">environment.gridworld_standard module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.gridworld_standard.StandardGridWorld"><code class="docutils literal notranslate"><span class="pre">StandardGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_standard.StandardGridWorld.step"><code class="docutils literal notranslate"><span class="pre">StandardGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#module-environment.gridworld_va_ann">environment.gridworld_va_ann module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.gridworld_va_ann.ANNGridWorld"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_ann.ANNGridWorld.reward_modifier"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld.reward_modifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_ann.ANNGridWorld.reset"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_ann.ANNGridWorld.step"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#module-environment.gridworld_va_classic">environment.gridworld_va_classic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.gridworld_va_classic.ClassicVAGridWorld"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_classic.ClassicVAGridWorld.affect"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.affect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_classic.ClassicVAGridWorld.bias_reward_with_affect"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.bias_reward_with_affect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_classic.ClassicVAGridWorld.reset"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.gridworld_va_classic.ClassicVAGridWorld.step"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html#module-environment">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.ANNGridWorld"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ANNGridWorld.reward_modifier"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld.reward_modifier</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ANNGridWorld.reset"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ANNGridWorld.step"><code class="docutils literal notranslate"><span class="pre">ANNGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.BaseGridWorld"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.height"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.height</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.width"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.width</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.grid"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.grid</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.start_pos"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.start_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.goal_pos"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.goal_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.agent_pos"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.agent_pos</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.step_reward"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.step_reward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.goal_reward"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.goal_reward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.collision_reward"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.collision_reward</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.max_steps"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.max_steps</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.current_step"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.current_step</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.ACTIONS"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.ACTIONS</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.ACTION_NAMES"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.ACTION_NAMES</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.coord_to_state"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.coord_to_state()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.is_valid_position"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.is_valid_position()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.num_actions"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.num_actions</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.num_states"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.num_states</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.reset"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.state_to_coord"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.state_to_coord()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.BaseGridWorld.step"><code class="docutils literal notranslate"><span class="pre">BaseGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.ClassicVAGridWorld"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ClassicVAGridWorld.affect"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.affect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ClassicVAGridWorld.bias_reward_with_affect"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.bias_reward_with_affect</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ClassicVAGridWorld.reset"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.ClassicVAGridWorld.step"><code class="docutils literal notranslate"><span class="pre">ClassicVAGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="environment.html#environment.StandardGridWorld"><code class="docutils literal notranslate"><span class="pre">StandardGridWorld</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="environment.html#environment.StandardGridWorld.step"><code class="docutils literal notranslate"><span class="pre">StandardGridWorld.step()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="evaluation.html">evaluation package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#module-evaluation.metrics">evaluation.metrics module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_cer_ci95"><code class="docutils literal notranslate"><span class="pre">compute_cer_ci95()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_cer_cv"><code class="docutils literal notranslate"><span class="pre">compute_cer_cv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_cer_phase_statistics"><code class="docutils literal notranslate"><span class="pre">compute_cer_phase_statistics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_cer_rme"><code class="docutils literal notranslate"><span class="pre">compute_cer_rme()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_cer_std"><code class="docutils literal notranslate"><span class="pre">compute_cer_std()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_convergence_metrics"><code class="docutils literal notranslate"><span class="pre">compute_convergence_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_gaussian_pdf"><code class="docutils literal notranslate"><span class="pre">compute_gaussian_pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.compute_stable_phase_statistics"><code class="docutils literal notranslate"><span class="pre">compute_stable_phase_statistics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.metrics.split_learning_phases"><code class="docutils literal notranslate"><span class="pre">split_learning_phases()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#module-evaluation.visualizer">evaluation.visualizer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_coefficient_of_variation"><code class="docutils literal notranslate"><span class="pre">plot_coefficient_of_variation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_collision_rate"><code class="docutils literal notranslate"><span class="pre">plot_collision_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_combined_phase_dashboard"><code class="docutils literal notranslate"><span class="pre">plot_combined_phase_dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_convergence_speed"><code class="docutils literal notranslate"><span class="pre">plot_convergence_speed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_current_cumulative_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_cumulative_reward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_current_episodic_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_episodic_reward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_normal_distribution"><code class="docutils literal notranslate"><span class="pre">plot_normal_distribution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_relative_margin_error"><code class="docutils literal notranslate"><span class="pre">plot_relative_margin_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.visualizer.plot_steps_per_episode"><code class="docutils literal notranslate"><span class="pre">plot_steps_per_episode()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#module-evaluation.exporter">evaluation.exporter module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.exporter.export_evaluation_suite"><code class="docutils literal notranslate"><span class="pre">export_evaluation_suite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.exporter.export_phase_metrics"><code class="docutils literal notranslate"><span class="pre">export_phase_metrics()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#module-evaluation.comparison">evaluation.comparison module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.comparison.generate_group_comparison"><code class="docutils literal notranslate"><span class="pre">generate_group_comparison()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.comparison.generate_phase_comparison"><code class="docutils literal notranslate"><span class="pre">generate_phase_comparison()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.comparison.merge_and_compare_groups"><code class="docutils literal notranslate"><span class="pre">merge_and_compare_groups()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.comparison.plot_combined_comparison_dashboard"><code class="docutils literal notranslate"><span class="pre">plot_combined_comparison_dashboard()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="evaluation.html#module-evaluation">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_cer_ci95"><code class="docutils literal notranslate"><span class="pre">compute_cer_ci95()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_cer_cv"><code class="docutils literal notranslate"><span class="pre">compute_cer_cv()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_cer_rme"><code class="docutils literal notranslate"><span class="pre">compute_cer_rme()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_cer_std"><code class="docutils literal notranslate"><span class="pre">compute_cer_std()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_convergence_metrics"><code class="docutils literal notranslate"><span class="pre">compute_convergence_metrics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_gaussian_pdf"><code class="docutils literal notranslate"><span class="pre">compute_gaussian_pdf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.compute_stable_phase_statistics"><code class="docutils literal notranslate"><span class="pre">compute_stable_phase_statistics()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.export_evaluation_suite"><code class="docutils literal notranslate"><span class="pre">export_evaluation_suite()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.generate_group_comparison"><code class="docutils literal notranslate"><span class="pre">generate_group_comparison()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.merge_and_compare_groups"><code class="docutils literal notranslate"><span class="pre">merge_and_compare_groups()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_coefficient_of_variation"><code class="docutils literal notranslate"><span class="pre">plot_coefficient_of_variation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_collision_rate"><code class="docutils literal notranslate"><span class="pre">plot_collision_rate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_combined_comparison_dashboard"><code class="docutils literal notranslate"><span class="pre">plot_combined_comparison_dashboard()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_convergence_speed"><code class="docutils literal notranslate"><span class="pre">plot_convergence_speed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_current_cumulative_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_cumulative_reward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_current_episodic_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_episodic_reward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_normal_distribution"><code class="docutils literal notranslate"><span class="pre">plot_normal_distribution()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_relative_margin_error"><code class="docutils literal notranslate"><span class="pre">plot_relative_margin_error()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.plot_steps_per_episode"><code class="docutils literal notranslate"><span class="pre">plot_steps_per_episode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="evaluation.html#evaluation.split_learning_phases"><code class="docutils literal notranslate"><span class="pre">split_learning_phases()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maze.html">maze package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maze.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html#module-maze.cellular_automata">maze.cellular_automata module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.cellular_automata.count_wall_neighbors_inbounds"><code class="docutils literal notranslate"><span class="pre">count_wall_neighbors_inbounds()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.cellular_automata.generate_ca_maze"><code class="docutils literal notranslate"><span class="pre">generate_ca_maze()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html#module-maze.kruskal">maze.kruskal module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.kruskal.DisjointSetUnion"><code class="docutils literal notranslate"><span class="pre">DisjointSetUnion</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="maze.html#maze.kruskal.DisjointSetUnion.find"><code class="docutils literal notranslate"><span class="pre">DisjointSetUnion.find()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="maze.html#maze.kruskal.DisjointSetUnion.union"><code class="docutils literal notranslate"><span class="pre">DisjointSetUnion.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.kruskal.generate_kruskal_maze"><code class="docutils literal notranslate"><span class="pre">generate_kruskal_maze()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html#module-maze.validation">maze.validation module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.bfs_shortest_distances"><code class="docutils literal notranslate"><span class="pre">bfs_shortest_distances()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.bresenham_line"><code class="docutils literal notranslate"><span class="pre">bresenham_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.compute_maximum_geodesic_distance"><code class="docutils literal notranslate"><span class="pre">compute_maximum_geodesic_distance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.find_connected_components"><code class="docutils literal notranslate"><span class="pre">find_connected_components()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.get_open_cells"><code class="docutils literal notranslate"><span class="pre">get_open_cells()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.has_line_of_sight"><code class="docutils literal notranslate"><span class="pre">has_line_of_sight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.validation.reconstruct_path"><code class="docutils literal notranslate"><span class="pre">reconstruct_path()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html#module-maze">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.DisjointSetUnion"><code class="docutils literal notranslate"><span class="pre">DisjointSetUnion</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="maze.html#maze.DisjointSetUnion.find"><code class="docutils literal notranslate"><span class="pre">DisjointSetUnion.find()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="maze.html#maze.DisjointSetUnion.union"><code class="docutils literal notranslate"><span class="pre">DisjointSetUnion.union()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.bfs_shortest_distances"><code class="docutils literal notranslate"><span class="pre">bfs_shortest_distances()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.bresenham_line"><code class="docutils literal notranslate"><span class="pre">bresenham_line()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.compute_maximum_geodesic_distance"><code class="docutils literal notranslate"><span class="pre">compute_maximum_geodesic_distance()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.find_connected_components"><code class="docutils literal notranslate"><span class="pre">find_connected_components()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.generate_ca_maze"><code class="docutils literal notranslate"><span class="pre">generate_ca_maze()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.generate_kruskal_maze"><code class="docutils literal notranslate"><span class="pre">generate_kruskal_maze()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.get_open_cells"><code class="docutils literal notranslate"><span class="pre">get_open_cells()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.has_line_of_sight"><code class="docutils literal notranslate"><span class="pre">has_line_of_sight()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="maze.html#maze.reconstruct_path"><code class="docutils literal notranslate"><span class="pre">reconstruct_path()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="policies.html">policies package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#module-policies.base">policies.base module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="policies.html#policies.base.BasePolicy"><code class="docutils literal notranslate"><span class="pre">BasePolicy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.base.BasePolicy.mode"><code class="docutils literal notranslate"><span class="pre">BasePolicy.mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.base.BasePolicy.decay_episode"><code class="docutils literal notranslate"><span class="pre">BasePolicy.decay_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.base.BasePolicy.get_param_value"><code class="docutils literal notranslate"><span class="pre">BasePolicy.get_param_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.base.BasePolicy.reset"><code class="docutils literal notranslate"><span class="pre">BasePolicy.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.base.BasePolicy.select_action"><code class="docutils literal notranslate"><span class="pre">BasePolicy.select_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.base.BasePolicy.update_affect"><code class="docutils literal notranslate"><span class="pre">BasePolicy.update_affect()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#module-policies.epsilon_greedy">policies.epsilon_greedy module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.mode"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.epsilon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon_init"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.epsilon_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.epsilon_min"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.epsilon_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.decay_rate"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.decay_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.rng"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.rng</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.decay_episode"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.decay_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.get_param_value"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.get_param_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.reset"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.select_action"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.select_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.epsilon_greedy.EpsilonGreedyPolicy.update_affect"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.update_affect()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html#module-policies">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="policies.html#policies.BasePolicy"><code class="docutils literal notranslate"><span class="pre">BasePolicy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.BasePolicy.mode"><code class="docutils literal notranslate"><span class="pre">BasePolicy.mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.BasePolicy.decay_episode"><code class="docutils literal notranslate"><span class="pre">BasePolicy.decay_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.BasePolicy.get_param_value"><code class="docutils literal notranslate"><span class="pre">BasePolicy.get_param_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.BasePolicy.reset"><code class="docutils literal notranslate"><span class="pre">BasePolicy.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.BasePolicy.select_action"><code class="docutils literal notranslate"><span class="pre">BasePolicy.select_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.BasePolicy.update_affect"><code class="docutils literal notranslate"><span class="pre">BasePolicy.update_affect()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.mode"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.mode</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.epsilon"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.epsilon</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.epsilon_init"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.epsilon_init</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.epsilon_min"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.epsilon_min</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.decay_rate"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.decay_rate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.rng"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.rng</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.decay_episode"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.decay_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.get_param_value"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.get_param_value()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.reset"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.reset()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.select_action"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.select_action()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="policies.html#policies.EpsilonGreedyPolicy.update_affect"><code class="docutils literal notranslate"><span class="pre">EpsilonGreedyPolicy.update_affect()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="policies.html#policies.create_policy"><code class="docutils literal notranslate"><span class="pre">create_policy()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ui.html">ui package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ui.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html#module-ui.gui">ui.gui module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.gui.run_gui_experiment"><code class="docutils literal notranslate"><span class="pre">run_gui_experiment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html#module-ui.headless">ui.headless module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.headless.create_environment"><code class="docutils literal notranslate"><span class="pre">create_environment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.headless.create_maze"><code class="docutils literal notranslate"><span class="pre">create_maze()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.headless.run_headless_experiment"><code class="docutils literal notranslate"><span class="pre">run_headless_experiment()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html#module-ui.renderer">ui.renderer module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.renderer.render_ascii_grid"><code class="docutils literal notranslate"><span class="pre">render_ascii_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.renderer.resolve_env_image_path"><code class="docutils literal notranslate"><span class="pre">resolve_env_image_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.renderer.save_environment_image"><code class="docutils literal notranslate"><span class="pre">save_environment_image()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html#module-ui">Module contents</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.render_ascii_grid"><code class="docutils literal notranslate"><span class="pre">render_ascii_grid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.resolve_env_image_path"><code class="docutils literal notranslate"><span class="pre">resolve_env_image_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.run_headless_experiment"><code class="docutils literal notranslate"><span class="pre">run_headless_experiment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="ui.html#ui.save_environment_image"><code class="docutils literal notranslate"><span class="pre">save_environment_image()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Affective Dyna-Q GridWorld Simulator Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="main.html" class="btn btn-neutral float-right" title="main module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Neville Jeremy, Filipus Ferry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

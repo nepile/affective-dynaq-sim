@@ -1,0 +1,1345 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>evaluation package &mdash; affective-dynaq 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="maze package" href="maze.html" />
+    <link rel="prev" title="environment package" href="environment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            affective-dynaq
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">API Reference:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">affective-dynaq</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="main.html">main module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="affect.html">affect package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="agent.html">agent package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="environment.html">environment package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">evaluation package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-evaluation.metrics">evaluation.metrics module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_cer_ci95"><code class="docutils literal notranslate"><span class="pre">compute_cer_ci95()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_cer_cv"><code class="docutils literal notranslate"><span class="pre">compute_cer_cv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_cer_phase_statistics"><code class="docutils literal notranslate"><span class="pre">compute_cer_phase_statistics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_cer_rme"><code class="docutils literal notranslate"><span class="pre">compute_cer_rme()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_cer_std"><code class="docutils literal notranslate"><span class="pre">compute_cer_std()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_convergence_metrics"><code class="docutils literal notranslate"><span class="pre">compute_convergence_metrics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_gaussian_pdf"><code class="docutils literal notranslate"><span class="pre">compute_gaussian_pdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.compute_stable_phase_statistics"><code class="docutils literal notranslate"><span class="pre">compute_stable_phase_statistics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.metrics.split_learning_phases"><code class="docutils literal notranslate"><span class="pre">split_learning_phases()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-evaluation.visualizer">evaluation.visualizer module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_coefficient_of_variation"><code class="docutils literal notranslate"><span class="pre">plot_coefficient_of_variation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_collision_rate"><code class="docutils literal notranslate"><span class="pre">plot_collision_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_combined_phase_dashboard"><code class="docutils literal notranslate"><span class="pre">plot_combined_phase_dashboard()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_convergence_speed"><code class="docutils literal notranslate"><span class="pre">plot_convergence_speed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_current_cumulative_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_cumulative_reward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_current_episodic_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_episodic_reward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_normal_distribution"><code class="docutils literal notranslate"><span class="pre">plot_normal_distribution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_relative_margin_error"><code class="docutils literal notranslate"><span class="pre">plot_relative_margin_error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.visualizer.plot_steps_per_episode"><code class="docutils literal notranslate"><span class="pre">plot_steps_per_episode()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-evaluation.exporter">evaluation.exporter module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.exporter.export_evaluation_suite"><code class="docutils literal notranslate"><span class="pre">export_evaluation_suite()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.exporter.export_phase_metrics"><code class="docutils literal notranslate"><span class="pre">export_phase_metrics()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-evaluation.comparison">evaluation.comparison module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.comparison.generate_group_comparison"><code class="docutils literal notranslate"><span class="pre">generate_group_comparison()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.comparison.generate_phase_comparison"><code class="docutils literal notranslate"><span class="pre">generate_phase_comparison()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.comparison.merge_and_compare_groups"><code class="docutils literal notranslate"><span class="pre">merge_and_compare_groups()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.comparison.plot_combined_comparison_dashboard"><code class="docutils literal notranslate"><span class="pre">plot_combined_comparison_dashboard()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-evaluation">Module contents</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_cer_ci95"><code class="docutils literal notranslate"><span class="pre">compute_cer_ci95()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_cer_cv"><code class="docutils literal notranslate"><span class="pre">compute_cer_cv()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_cer_rme"><code class="docutils literal notranslate"><span class="pre">compute_cer_rme()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_cer_std"><code class="docutils literal notranslate"><span class="pre">compute_cer_std()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_convergence_metrics"><code class="docutils literal notranslate"><span class="pre">compute_convergence_metrics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_gaussian_pdf"><code class="docutils literal notranslate"><span class="pre">compute_gaussian_pdf()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.compute_stable_phase_statistics"><code class="docutils literal notranslate"><span class="pre">compute_stable_phase_statistics()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.export_evaluation_suite"><code class="docutils literal notranslate"><span class="pre">export_evaluation_suite()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.generate_group_comparison"><code class="docutils literal notranslate"><span class="pre">generate_group_comparison()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.merge_and_compare_groups"><code class="docutils literal notranslate"><span class="pre">merge_and_compare_groups()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_coefficient_of_variation"><code class="docutils literal notranslate"><span class="pre">plot_coefficient_of_variation()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_collision_rate"><code class="docutils literal notranslate"><span class="pre">plot_collision_rate()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_combined_comparison_dashboard"><code class="docutils literal notranslate"><span class="pre">plot_combined_comparison_dashboard()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_convergence_speed"><code class="docutils literal notranslate"><span class="pre">plot_convergence_speed()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_current_cumulative_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_cumulative_reward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_current_episodic_reward"><code class="docutils literal notranslate"><span class="pre">plot_current_episodic_reward()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_normal_distribution"><code class="docutils literal notranslate"><span class="pre">plot_normal_distribution()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_relative_margin_error"><code class="docutils literal notranslate"><span class="pre">plot_relative_margin_error()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.plot_steps_per_episode"><code class="docutils literal notranslate"><span class="pre">plot_steps_per_episode()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#evaluation.split_learning_phases"><code class="docutils literal notranslate"><span class="pre">split_learning_phases()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="maze.html">maze package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="policies.html">policies package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ui.html">ui package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">affective-dynaq</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">affective-dynaq</a></li>
+      <li class="breadcrumb-item active">evaluation package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/evaluation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="evaluation-package">
+<h1>evaluation package<a class="headerlink" href="#evaluation-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-evaluation.metrics">
+<span id="evaluation-metrics-module"></span><h2>evaluation.metrics module<a class="headerlink" href="#module-evaluation.metrics" title="Link to this heading"></a></h2>
+<p>Mathematical and statistical metrics for evaluating Dyna-Q agent learning performance.</p>
+<p>Implements evaluation across two distinct phases (Initial Phase 80% vs Stable Phase 20%):</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Initial Phase:</dt><dd><ol class="arabic simple">
+<li><p>Steps per episode</p></li>
+<li><p>Current Cumulative Reward (CCR)</p></li>
+<li><p>Current Episodic Reward (CER)</p></li>
+<li><p>Convergence Speed</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Stable Phase:</dt><dd><ol class="arabic simple" start="5">
+<li><p>Collision Rate</p></li>
+<li><p>Coefficient of Variation (CV) based on CER</p></li>
+<li><p>Relative Margin Error (RME) based on CER</p></li>
+<li><p>Gaussian Normal Distribution parameters based on CER</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_cer_ci95">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_cer_ci95</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_std</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.metrics.compute_cer_ci95" title="Link to this definition"></a></dt>
+<dd><p>Compute 95% Confidence Interval half-width margin of error.</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{ci95} = 1.96 \times \frac{CER_{std}}{\sqrt{N}}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_std</strong> (<em>float</em>) – Standard deviation of CER.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – Sample size (number of episodes N in the stable phase).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Half-width margin of error for 95% confidence interval.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_cer_cv">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_cer_cv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_std</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cer_avg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.metrics.compute_cer_cv" title="Link to this definition"></a></dt>
+<dd><p>Compute Coefficient of Variation (CV) in percent.</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{cv} = \frac{CER_{std}}{|CER_{avg}|} \times 100\%\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_std</strong> (<em>float</em>) – Standard deviation of CER.</p></li>
+<li><p><strong>cer_avg</strong> (<em>float</em>) – Mean of CER.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Coefficient of variation expressed as a percentage (%).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_cer_phase_statistics">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_cer_phase_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.metrics.compute_cer_phase_statistics" title="Link to this definition"></a></dt>
+<dd><p>Compute complete statistical metrics for CER across any learning phase.</p>
+<p>Calculates N, CER_avg, CER_std, CER_var, CER_ci95, CI boundaries, CER_cv, and CER_rme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – List of episodic rewards from a learning phase.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing N, CER_avg, CER_std, CER_var,
+CER_ci95, CI boundaries, CER_cv, and CER_rme.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_cer_rme">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_cer_rme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_ci95</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cer_avg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.metrics.compute_cer_rme" title="Link to this definition"></a></dt>
+<dd><p>Compute Relative Margin Error (RME) in percent.</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{rme} = \frac{CER_{ci95}}{|CER_{avg}|} \times 100\%\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_ci95</strong> (<em>float</em>) – 95% confidence interval margin of error.</p></li>
+<li><p><strong>cer_avg</strong> (<em>float</em>) – Mean of CER.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Relative margin error expressed as a percentage (%).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_cer_std">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_cer_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cer_avg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.metrics.compute_cer_std" title="Link to this definition"></a></dt>
+<dd><p>Compute standard deviation of CER (Cumulative Episodic Reward).</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{std} = \sqrt{\frac{1}{N} \sum_{i=1}^N (CER_i - CER_{avg})^2}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – List of episodic rewards in the stable phase.</p></li>
+<li><p><strong>cer_avg</strong> (<em>float</em>) – Mean of CER in the stable phase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Population standard deviation of CER.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_convergence_metrics">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_convergence_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rewards_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimal_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">episode_numbers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.metrics.compute_convergence_metrics" title="Link to this definition"></a></dt>
+<dd><p>Calculate convergence episode and speed metrics during a learning phase.</p>
+<p>Identifies when the agent achieves consistent task performance. An agent is
+considered converged when moving average steps approach optimal geodesic distance
+within tolerance_ratio (or stabilizes with low relative variance) for at least
+window_size consecutive episodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps_list</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – Steps per episode during the phase.</p></li>
+<li><p><strong>rewards_list</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Rewards per episode during the phase.</p></li>
+<li><p><strong>optimal_steps</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – Geodesic shortest path length.</p></li>
+<li><p><strong>window_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Sliding window for stability check. Defaults to 5.</p></li>
+<li><p><strong>tolerance_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Permissible margin above optimal. Defaults to 0.25.</p></li>
+<li><p><strong>episode_numbers</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Actual episode numbers in this phase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Convergence details including convergence_episode,
+episodes_to_converge, moving averages, and convergence status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_gaussian_pdf">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_gaussian_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.metrics.compute_gaussian_pdf" title="Link to this definition"></a></dt>
+<dd><p>Evaluate normal (Gaussian) probability density function f(x).</p>
+<p>Formula:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Evaluation point.</p></li>
+<li><p><strong>mu</strong> (<em>float</em>) – Mean (CER_avg).</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation (CER_std).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability density at x.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.compute_stable_phase_statistics">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">compute_stable_phase_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.metrics.compute_stable_phase_statistics" title="Link to this definition"></a></dt>
+<dd><p>Compute complete statistical metrics for CER across any learning phase.</p>
+<p>Calculates N, CER_avg, CER_std, CER_var, CER_ci95, CI boundaries, CER_cv, and CER_rme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – List of episodic rewards from a learning phase.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing N, CER_avg, CER_std, CER_var,
+CER_ci95, CI boundaries, CER_cv, and CER_rme.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.metrics.split_learning_phases">
+<span class="sig-prename descclassname"><span class="pre">evaluation.metrics.</span></span><span class="sig-name descname"><span class="pre">split_learning_phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_phase_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.metrics.split_learning_phases" title="Link to this definition"></a></dt>
+<dd><p>Calculate the number of episodes for the initial phase and stable phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>total_episodes</strong> (<em>int</em>) – Total number of learning episodes (N_total).</p></li>
+<li><p><strong>initial_phase_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Proportion for initial phase (0.0 to 1.0).
+Defaults to 0.8 (80% initial phase, 20% stable phase).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(n_initial, n_stable), where n_initial + n_stable == total_episodes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-evaluation.visualizer">
+<span id="evaluation-visualizer-module"></span><h2>evaluation.visualizer module<a class="headerlink" href="#module-evaluation.visualizer" title="Link to this heading"></a></h2>
+<p>Visualization generator for learning evaluation metrics across learning phases.</p>
+<p>Produces publication-grade plots (300 DPI) for each of the 8 metrics in any phase
+(Initial Phase 80% and Stable Phase 20%), plus comprehensive multi-panel dashboards.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_coefficient_of_variation">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_coefficient_of_variation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stats_per_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_coefficient_of_variation" title="Link to this definition"></a></dt>
+<dd><p>Plot Coefficient of Variation (CV) of CER during the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stats_per_seed</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Statistics per seed.</p></li>
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Aggregated statistics.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_collision_rate">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_collision_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_collision_rate" title="Link to this definition"></a></dt>
+<dd><p>Plot collision rate across episodes in the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_combined_phase_dashboard">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_combined_phase_dashboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stats_per_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_combined_phase_dashboard" title="Link to this definition"></a></dt>
+<dd><p>Generate a single 8-panel dashboard combining all 8 metrics for this learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phase_name</strong> (<em>str</em>) – Label of phase (e.g. ‘Initial Phase (80%)’, ‘Stable Phase (20%)’).</p></li>
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>conv_metrics</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Convergence stats per seed.</p></li>
+<li><p><strong>stats_per_seed</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Statistical parameters per seed.</p></li>
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Aggregated statistics.</p></li>
+<li><p><strong>raw_cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Empirical CER values.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – File path for combined image.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_convergence_speed">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_convergence_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_convergence_speed" title="Link to this definition"></a></dt>
+<dd><p>Plot convergence speed trajectory with convergence episode markers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>conv_metrics</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Convergence stats per seed.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_current_cumulative_reward">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_current_cumulative_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_current_cumulative_reward" title="Link to this definition"></a></dt>
+<dd><p>Plot Current Cumulative Reward (CCR) across the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_current_episodic_reward">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_current_episodic_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_current_episodic_reward" title="Link to this definition"></a></dt>
+<dd><p>Plot Current Episodic Reward (CER) across the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_normal_distribution">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_normal_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_normal_distribution" title="Link to this definition"></a></dt>
+<dd><p>Plot Gaussian Normal Distribution curve of CER in the specified phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Combined statistics for this phase.</p></li>
+<li><p><strong>raw_cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Actual empirical CER values in this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_relative_margin_error">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_relative_margin_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stats_per_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_relative_margin_error" title="Link to this definition"></a></dt>
+<dd><p>Plot Relative Margin Error (RME) and 95% Confidence Interval for CER.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stats_per_seed</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Statistics per seed.</p></li>
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Aggregated statistics.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.visualizer.plot_steps_per_episode">
+<span class="sig-prename descclassname"><span class="pre">evaluation.visualizer.</span></span><span class="sig-name descname"><span class="pre">plot_steps_per_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.visualizer.plot_steps_per_episode" title="Link to this definition"></a></dt>
+<dd><p>Plot steps per episode across the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-evaluation.exporter">
+<span id="evaluation-exporter-module"></span><h2>evaluation.exporter module<a class="headerlink" href="#module-evaluation.exporter" title="Link to this heading"></a></h2>
+<p>CSV and visual report exporter for agent learning evaluation metrics.</p>
+<p>Coordinates the computation of all 8 metrics across both Initial Phase (80%)
+and Stable Phase (20%), exporting each metric into its own designated sub-folder:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/[&lt;group_name&gt;/]&lt;experiment_name&gt;/
+├── initial_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_initial.png
+└── stable_phase/
+    ├── steps_per_episode/
+    ├── current_cumulative_reward/
+    ├── current_episodic_reward/
+    ├── convergence_speed/
+    ├── collision_rate/
+    ├── coefficient_of_variation/
+    ├── relative_margin_error/
+    ├── normal_distribution/
+    └── all_metrics_stable.png
+</pre></div>
+</div>
+<p>Also triggers comparative group evaluations across sibling experiments in:
+reports/&lt;group_name&gt;/comparison/</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.exporter.export_evaluation_suite">
+<span class="sig-prename descclassname"><span class="pre">evaluation.exporter.</span></span><span class="sig-name descname"><span class="pre">export_evaluation_suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimal_steps_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reports_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'reports'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_phase_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.exporter.export_evaluation_suite" title="Link to this definition"></a></dt>
+<dd><p>Execute complete evaluation suite across both Initial Phase and Stable Phase.</p>
+<p>Creates the designated directory layout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/[group_name/]&lt;experiment_name&gt;/
+├── initial_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_initial.png
+└── stable_phase/
+    ├── steps_per_episode/
+    ├── current_cumulative_reward/
+    ├── current_episodic_reward/
+    ├── convergence_speed/
+    ├── collision_rate/
+    ├── coefficient_of_variation/
+    ├── relative_margin_error/
+    ├── normal_distribution/
+    └── all_metrics_stable.png
+</pre></div>
+</div>
+<p>If group_name is provided, also triggers cross-experiment comparison in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/&lt;group_name&gt;/comparison/
+├── initial_phase/&lt;metric_subfolder&gt;/
+├── stable_phase/&lt;metric_subfolder&gt;/
+└── all_metrics_comparison.png
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Mapping from seed to list of episode dicts.
+Each episode dict contains ‘episode’, ‘steps’, ‘reward’, ‘collisions’, ‘status’.</p></li>
+<li><p><strong>optimal_steps_dict</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – Optimal geodesic distance per seed.</p></li>
+<li><p><strong>experiment_name</strong> (<em>str</em>) – Unique experiment name used as destination directory.</p></li>
+<li><p><strong>reports_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Base reports directory. Defaults to “reports”.</p></li>
+<li><p><strong>initial_phase_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Initial phase proportion (default: 0.8).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Plot resolution DPI. Defaults to 300.</p></li>
+<li><p><strong>group_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Group name grouping sibling experiments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Export summary containing file paths and aggregated statistics.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.exporter.export_phase_metrics">
+<span class="sig-prename descclassname"><span class="pre">evaluation.exporter.</span></span><span class="sig-name descname"><span class="pre">export_phase_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phase_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimal_steps_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.exporter.export_phase_metrics" title="Link to this definition"></a></dt>
+<dd><p>Export all 8 metrics (CSV and publication PNG) for a single learning phase.</p>
+<p>Each metric is stored in its own sub-folder inside phase_dir:
+- steps_per_episode/
+- current_cumulative_reward/
+- current_episodic_reward/
+- convergence_speed/
+- collision_rate/
+- coefficient_of_variation/
+- relative_margin_error/
+- normal_distribution/
+Plus an aggregated 8-panel dashboard: all_metrics_&lt;phase_slug&gt;.png.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phase_dir</strong> (<em>str</em>) – Destination folder for this phase.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em>) – Human-readable title (e.g. “Initial Phase (80%)”).</p></li>
+<li><p><strong>phase_slug</strong> (<em>str</em>) – File slug (e.g. “initial” or “stable”).</p></li>
+<li><p><strong>phase_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Sliced episode logs per seed.</p></li>
+<li><p><strong>optimal_steps_dict</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – Optimal geodesic distance per seed.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Phase statistics, convergence metrics, and dashboard file path.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-evaluation.comparison">
+<span id="evaluation-comparison-module"></span><h2>evaluation.comparison module<a class="headerlink" href="#module-evaluation.comparison" title="Link to this heading"></a></h2>
+<p>Cross-experiment comparative evaluation suite for experimental groups.</p>
+<p>When multiple experiments belong to the same group_name, this module generates
+comparative analysis and visualization figures across all 8 learning metrics
+inside:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/&lt;group_name&gt;/comparison/
+├── initial_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_comparison_initial.png
+├── stable_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_comparison_stable.png
+└── all_metrics_comparison.png (Executive Master Dashboard)
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.comparison.generate_group_comparison">
+<span class="sig-prename descclassname"><span class="pre">evaluation.comparison.</span></span><span class="sig-name descname"><span class="pre">generate_group_comparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reports_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.comparison.generate_group_comparison" title="Link to this definition"></a></dt>
+<dd><p>Generate comparative CSVs and PNG figures across all experiments in a group.</p>
+<p>Creates full comparisons for both Initial Phase and Stable Phase in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/&lt;group_name&gt;/comparison/
+├── initial_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_comparison_initial.png
+├── stable_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_comparison_stable.png
+└── all_metrics_comparison.png (Executive Master Dashboard)
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reports_dir</strong> (<em>str</em>) – Base reports directory.</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – Name of the experiment group.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution DPI. Defaults to 300.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Summary of generated comparison reports, or None if skipped.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.comparison.generate_phase_comparison">
+<span class="sig-prename descclassname"><span class="pre">evaluation.comparison.</span></span><span class="sig-name descname"><span class="pre">generate_phase_comparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_slug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.comparison.generate_phase_comparison" title="Link to this definition"></a></dt>
+<dd><p>Generate comparative CSVs and PNGs for all 8 metrics for a single phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group_name</strong> (<em>str</em>) – Experimental group name.</p></li>
+<li><p><strong>group_path</strong> (<em>str</em>) – Path to group reports root.</p></li>
+<li><p><strong>exp_names</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of sibling experiment names.</p></li>
+<li><p><strong>phase_slug</strong> (<em>str</em>) – Sub-folder slug (“initial_phase” or “stable_phase”).</p></li>
+<li><p><strong>phase_title</strong> (<em>str</em>) – Display title (“Initial Phase (80%)” or “Stable Phase (20%)”).</p></li>
+<li><p><strong>target_dir</strong> (<em>str</em>) – Destination folder (e.g. comparison/initial_phase).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Extracted data dictionaries for further aggregation.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.comparison.merge_and_compare_groups">
+<span class="sig-prename descclassname"><span class="pre">evaluation.comparison.</span></span><span class="sig-name descname"><span class="pre">merge_and_compare_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reports_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'reports'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_aliases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_experiments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.comparison.merge_and_compare_groups" title="Link to this definition"></a></dt>
+<dd><p>Merge multiple experiment groups into a single combined comparison group.</p>
+<p>Creates links (or copies) of individual experiment sub-folders from multiple
+source groups into reports/&lt;target_group&gt;/, and triggers the full cross-experiment
+comparison suite across all 8 metrics for both Initial Phase and Stable Phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_groups</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of group folder names in reports/.</p></li>
+<li><p><strong>target_group</strong> (<em>str</em>) – Name for the new merged comparison group folder.</p></li>
+<li><p><strong>reports_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Base reports directory. Defaults to “reports”.</p></li>
+<li><p><strong>experiment_aliases</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Custom display names
+mapping from original experiment folder names to friendly names.</p></li>
+<li><p><strong>filter_experiments</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Specific experiment names
+to include (omits any other experiments found in the groups).</p></li>
+<li><p><strong>copy_files</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, physically copies directories instead
+of creating symlinks. Defaults to False (symlinks).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution DPI. Defaults to 300.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Comparison summary dictionary, or None if failed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.comparison.plot_combined_comparison_dashboard">
+<span class="sig-prename descclassname"><span class="pre">evaluation.comparison.</span></span><span class="sig-name descname"><span class="pre">plot_combined_comparison_dashboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_steps_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_ccr_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_cer_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_coll_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rme_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gauss_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.comparison.plot_combined_comparison_dashboard" title="Link to this definition"></a></dt>
+<dd><p>Generate a single unified 8-panel dashboard combining all comparison plots.</p>
+<p>Layout:
+[ (1) Steps per Episode ] [ (2) Current Cumulative Reward ]
+[ (3) Episodic Reward   ] [ (4) Convergence Speed         ]
+[ (5) Collision Rate    ] [ (6) Coefficient of Variation  ]
+[ (7) Rel Margin Error  ] [ (8) Normal Distribution       ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group_name</strong> (<em>str</em>) – Experimental group name.</p></li>
+<li><p><strong>exp_steps_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Steps per episode per experiment.</p></li>
+<li><p><strong>exp_ccr_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Cumulative reward per experiment.</p></li>
+<li><p><strong>exp_cer_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Episodic reward per experiment.</p></li>
+<li><p><strong>conv_summary</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Convergence stats per experiment.</p></li>
+<li><p><strong>exp_coll_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Collision rate per experiment.</p></li>
+<li><p><strong>cv_summary</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – CV % summary per experiment.</p></li>
+<li><p><strong>rme_summary</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – RME % summary per experiment.</p></li>
+<li><p><strong>gauss_params</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Gaussian normal parameters per experiment.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination file path for combined image.</p></li>
+<li><p><strong>phase_title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title label for phase. Defaults to “”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-evaluation">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-evaluation" title="Link to this heading"></a></h2>
+<p>Evaluation package for Dyna-Q reinforcement learning agents.</p>
+<p>Provides comprehensive metric calculation, statistical analysis, and publication-ready
+visualizations for both the initial learning phase (80%) and the stable convergence phase (20%).</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_cer_ci95">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_cer_ci95</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_std</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.compute_cer_ci95" title="Link to this definition"></a></dt>
+<dd><p>Compute 95% Confidence Interval half-width margin of error.</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{ci95} = 1.96 \times \frac{CER_{std}}{\sqrt{N}}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_std</strong> (<em>float</em>) – Standard deviation of CER.</p></li>
+<li><p><strong>n</strong> (<em>int</em>) – Sample size (number of episodes N in the stable phase).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Half-width margin of error for 95% confidence interval.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_cer_cv">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_cer_cv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_std</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cer_avg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.compute_cer_cv" title="Link to this definition"></a></dt>
+<dd><p>Compute Coefficient of Variation (CV) in percent.</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{cv} = \frac{CER_{std}}{|CER_{avg}|} \times 100\%\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_std</strong> (<em>float</em>) – Standard deviation of CER.</p></li>
+<li><p><strong>cer_avg</strong> (<em>float</em>) – Mean of CER.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Coefficient of variation expressed as a percentage (%).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_cer_rme">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_cer_rme</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_ci95</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cer_avg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.compute_cer_rme" title="Link to this definition"></a></dt>
+<dd><p>Compute Relative Margin Error (RME) in percent.</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{rme} = \frac{CER_{ci95}}{|CER_{avg}|} \times 100\%\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_ci95</strong> (<em>float</em>) – 95% confidence interval margin of error.</p></li>
+<li><p><strong>cer_avg</strong> (<em>float</em>) – Mean of CER.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Relative margin error expressed as a percentage (%).</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_cer_std">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_cer_std</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cer_avg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.compute_cer_std" title="Link to this definition"></a></dt>
+<dd><p>Compute standard deviation of CER (Cumulative Episodic Reward).</p>
+<p>Formula (from specification document):</p>
+<div class="math notranslate nohighlight">
+\[CER_{std} = \sqrt{\frac{1}{N} \sum_{i=1}^N (CER_i - CER_{avg})^2}\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – List of episodic rewards in the stable phase.</p></li>
+<li><p><strong>cer_avg</strong> (<em>float</em>) – Mean of CER in the stable phase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Population standard deviation of CER.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_convergence_metrics">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_convergence_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">steps_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rewards_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimal_steps</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tolerance_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.25</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">episode_numbers</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.compute_convergence_metrics" title="Link to this definition"></a></dt>
+<dd><p>Calculate convergence episode and speed metrics during a learning phase.</p>
+<p>Identifies when the agent achieves consistent task performance. An agent is
+considered converged when moving average steps approach optimal geodesic distance
+within tolerance_ratio (or stabilizes with low relative variance) for at least
+window_size consecutive episodes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>steps_list</strong> (<em>List</em><em>[</em><em>int</em><em>]</em>) – Steps per episode during the phase.</p></li>
+<li><p><strong>rewards_list</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Rewards per episode during the phase.</p></li>
+<li><p><strong>optimal_steps</strong> (<em>Optional</em><em>[</em><em>int</em><em>]</em><em>, </em><em>optional</em>) – Geodesic shortest path length.</p></li>
+<li><p><strong>window_size</strong> (<em>int</em><em>, </em><em>optional</em>) – Sliding window for stability check. Defaults to 5.</p></li>
+<li><p><strong>tolerance_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Permissible margin above optimal. Defaults to 0.25.</p></li>
+<li><p><strong>episode_numbers</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>int</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Actual episode numbers in this phase.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Convergence details including convergence_episode,
+episodes_to_converge, moving averages, and convergence status.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_gaussian_pdf">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_gaussian_pdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mu</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#evaluation.compute_gaussian_pdf" title="Link to this definition"></a></dt>
+<dd><p>Evaluate normal (Gaussian) probability density function f(x).</p>
+<p>Formula:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left(-\frac{1}{2}\left(\frac{x - \mu}{\sigma}\right)^2\right)\]</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>x</strong> (<em>float</em>) – Evaluation point.</p></li>
+<li><p><strong>mu</strong> (<em>float</em>) – Mean (CER_avg).</p></li>
+<li><p><strong>sigma</strong> (<em>float</em>) – Standard deviation (CER_std).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Probability density at x.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.compute_stable_phase_statistics">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">compute_stable_phase_statistics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.compute_stable_phase_statistics" title="Link to this definition"></a></dt>
+<dd><p>Compute complete statistical metrics for CER across any learning phase.</p>
+<p>Calculates N, CER_avg, CER_std, CER_var, CER_ci95, CI boundaries, CER_cv, and CER_rme.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – List of episodic rewards from a learning phase.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Dictionary containing N, CER_avg, CER_std, CER_var,
+CER_ci95, CI boundaries, CER_cv, and CER_rme.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.export_evaluation_suite">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">export_evaluation_suite</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimal_steps_dict</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reports_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'reports'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_phase_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.export_evaluation_suite" title="Link to this definition"></a></dt>
+<dd><p>Execute complete evaluation suite across both Initial Phase and Stable Phase.</p>
+<p>Creates the designated directory layout:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/[group_name/]&lt;experiment_name&gt;/
+├── initial_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_initial.png
+└── stable_phase/
+    ├── steps_per_episode/
+    ├── current_cumulative_reward/
+    ├── current_episodic_reward/
+    ├── convergence_speed/
+    ├── collision_rate/
+    ├── coefficient_of_variation/
+    ├── relative_margin_error/
+    ├── normal_distribution/
+    └── all_metrics_stable.png
+</pre></div>
+</div>
+<p>If group_name is provided, also triggers cross-experiment comparison in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/&lt;group_name&gt;/comparison/
+├── initial_phase/&lt;metric_subfolder&gt;/
+├── stable_phase/&lt;metric_subfolder&gt;/
+└── all_metrics_comparison.png
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Mapping from seed to list of episode dicts.
+Each episode dict contains ‘episode’, ‘steps’, ‘reward’, ‘collisions’, ‘status’.</p></li>
+<li><p><strong>optimal_steps_dict</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em>) – Optimal geodesic distance per seed.</p></li>
+<li><p><strong>experiment_name</strong> (<em>str</em>) – Unique experiment name used as destination directory.</p></li>
+<li><p><strong>reports_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Base reports directory. Defaults to “reports”.</p></li>
+<li><p><strong>initial_phase_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Initial phase proportion (default: 0.8).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Plot resolution DPI. Defaults to 300.</p></li>
+<li><p><strong>group_name</strong> (<em>Optional</em><em>[</em><em>str</em><em>]</em><em>, </em><em>optional</em>) – Group name grouping sibling experiments.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Export summary containing file paths and aggregated statistics.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.generate_group_comparison">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">generate_group_comparison</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">reports_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.generate_group_comparison" title="Link to this definition"></a></dt>
+<dd><p>Generate comparative CSVs and PNG figures across all experiments in a group.</p>
+<p>Creates full comparisons for both Initial Phase and Stable Phase in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>reports/&lt;group_name&gt;/comparison/
+├── initial_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_comparison_initial.png
+├── stable_phase/
+│   ├── steps_per_episode/
+│   ├── current_cumulative_reward/
+│   ├── current_episodic_reward/
+│   ├── convergence_speed/
+│   ├── collision_rate/
+│   ├── coefficient_of_variation/
+│   ├── relative_margin_error/
+│   ├── normal_distribution/
+│   └── all_metrics_comparison_stable.png
+└── all_metrics_comparison.png (Executive Master Dashboard)
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>reports_dir</strong> (<em>str</em>) – Base reports directory.</p></li>
+<li><p><strong>group_name</strong> (<em>str</em>) – Name of the experiment group.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution DPI. Defaults to 300.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Summary of generated comparison reports, or None if skipped.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.merge_and_compare_groups">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">merge_and_compare_groups</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source_groups</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_group</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reports_dir</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'reports'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">experiment_aliases</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filter_experiments</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">copy_files</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.merge_and_compare_groups" title="Link to this definition"></a></dt>
+<dd><p>Merge multiple experiment groups into a single combined comparison group.</p>
+<p>Creates links (or copies) of individual experiment sub-folders from multiple
+source groups into reports/&lt;target_group&gt;/, and triggers the full cross-experiment
+comparison suite across all 8 metrics for both Initial Phase and Stable Phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>source_groups</strong> (<em>List</em><em>[</em><em>str</em><em>]</em>) – List of group folder names in reports/.</p></li>
+<li><p><strong>target_group</strong> (<em>str</em>) – Name for the new merged comparison group folder.</p></li>
+<li><p><strong>reports_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – Base reports directory. Defaults to “reports”.</p></li>
+<li><p><strong>experiment_aliases</strong> (<em>Optional</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Custom display names
+mapping from original experiment folder names to friendly names.</p></li>
+<li><p><strong>filter_experiments</strong> (<em>Optional</em><em>[</em><em>List</em><em>[</em><em>str</em><em>]</em><em>]</em><em>, </em><em>optional</em>) – Specific experiment names
+to include (omits any other experiments found in the groups).</p></li>
+<li><p><strong>copy_files</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, physically copies directories instead
+of creating symlinks. Defaults to False (symlinks).</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution DPI. Defaults to 300.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Comparison summary dictionary, or None if failed.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional[Dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_coefficient_of_variation">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_coefficient_of_variation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stats_per_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_coefficient_of_variation" title="Link to this definition"></a></dt>
+<dd><p>Plot Coefficient of Variation (CV) of CER during the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stats_per_seed</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Statistics per seed.</p></li>
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Aggregated statistics.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_collision_rate">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_collision_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_collision_rate" title="Link to this definition"></a></dt>
+<dd><p>Plot collision rate across episodes in the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_combined_comparison_dashboard">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_combined_comparison_dashboard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">group_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_steps_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_ccr_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_cer_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exp_coll_data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cv_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rme_summary</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gauss_params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">''</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_combined_comparison_dashboard" title="Link to this definition"></a></dt>
+<dd><p>Generate a single unified 8-panel dashboard combining all comparison plots.</p>
+<p>Layout:
+[ (1) Steps per Episode ] [ (2) Current Cumulative Reward ]
+[ (3) Episodic Reward   ] [ (4) Convergence Speed         ]
+[ (5) Collision Rate    ] [ (6) Coefficient of Variation  ]
+[ (7) Rel Margin Error  ] [ (8) Normal Distribution       ]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>group_name</strong> (<em>str</em>) – Experimental group name.</p></li>
+<li><p><strong>exp_steps_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Steps per episode per experiment.</p></li>
+<li><p><strong>exp_ccr_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Cumulative reward per experiment.</p></li>
+<li><p><strong>exp_cer_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Episodic reward per experiment.</p></li>
+<li><p><strong>conv_summary</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Convergence stats per experiment.</p></li>
+<li><p><strong>exp_coll_data</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Dict</em><em>[</em><em>int</em><em>, </em><em>float</em><em>]</em><em>]</em>) – Collision rate per experiment.</p></li>
+<li><p><strong>cv_summary</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – CV % summary per experiment.</p></li>
+<li><p><strong>rme_summary</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – RME % summary per experiment.</p></li>
+<li><p><strong>gauss_params</strong> (<em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Gaussian normal parameters per experiment.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination file path for combined image.</p></li>
+<li><p><strong>phase_title</strong> (<em>str</em><em>, </em><em>optional</em>) – Title label for phase. Defaults to “”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_convergence_speed">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_convergence_speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">conv_metrics</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_convergence_speed" title="Link to this definition"></a></dt>
+<dd><p>Plot convergence speed trajectory with convergence episode markers.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>conv_metrics</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Convergence stats per seed.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_current_cumulative_reward">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_current_cumulative_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_current_cumulative_reward" title="Link to this definition"></a></dt>
+<dd><p>Plot Current Cumulative Reward (CCR) across the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_current_episodic_reward">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_current_episodic_reward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_current_episodic_reward" title="Link to this definition"></a></dt>
+<dd><p>Plot Current Episodic Reward (CER) across the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_normal_distribution">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_normal_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raw_cer_values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_normal_distribution" title="Link to this definition"></a></dt>
+<dd><p>Plot Gaussian Normal Distribution curve of CER in the specified phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Combined statistics for this phase.</p></li>
+<li><p><strong>raw_cer_values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – Actual empirical CER values in this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_relative_margin_error">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_relative_margin_error</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stats_per_seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">combined_stats</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Stable</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_relative_margin_error" title="Link to this definition"></a></dt>
+<dd><p>Plot Relative Margin Error (RME) and 95% Confidence Interval for CER.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>stats_per_seed</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em>) – Statistics per seed.</p></li>
+<li><p><strong>combined_stats</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – Aggregated statistics.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Stable Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.plot_steps_per_episode">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">plot_steps_per_episode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seed_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'Initial</span> <span class="pre">Phase'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpi</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#evaluation.plot_steps_per_episode" title="Link to this definition"></a></dt>
+<dd><p>Plot steps per episode across the specified learning phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>seed_episodes</strong> (<em>Dict</em><em>[</em><em>int</em><em>, </em><em>List</em><em>[</em><em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em><em>]</em><em>]</em>) – Episode logs per seed for this phase.</p></li>
+<li><p><strong>output_path</strong> (<em>str</em>) – Destination PNG path.</p></li>
+<li><p><strong>phase_name</strong> (<em>str</em><em>, </em><em>optional</em>) – Label for the phase. Defaults to “Initial Phase”.</p></li>
+<li><p><strong>dpi</strong> (<em>int</em><em>, </em><em>optional</em>) – Image resolution. Defaults to 300.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="evaluation.split_learning_phases">
+<span class="sig-prename descclassname"><span class="pre">evaluation.</span></span><span class="sig-name descname"><span class="pre">split_learning_phases</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">total_episodes</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_phase_ratio</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.8</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#evaluation.split_learning_phases" title="Link to this definition"></a></dt>
+<dd><p>Calculate the number of episodes for the initial phase and stable phase.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>total_episodes</strong> (<em>int</em>) – Total number of learning episodes (N_total).</p></li>
+<li><p><strong>initial_phase_ratio</strong> (<em>float</em><em>, </em><em>optional</em>) – Proportion for initial phase (0.0 to 1.0).
+Defaults to 0.8 (80% initial phase, 20% stable phase).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(n_initial, n_stable), where n_initial + n_stable == total_episodes.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple[int, int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="environment.html" class="btn btn-neutral float-left" title="environment package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="maze.html" class="btn btn-neutral float-right" title="maze package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Neville Jeremy, Filipus Ferry.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

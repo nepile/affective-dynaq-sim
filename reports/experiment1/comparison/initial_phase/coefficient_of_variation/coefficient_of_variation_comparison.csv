@@ -1,0 +1,5 @@
+experiment,N_episodes,CER_avg,CER_std,CER_cv_percent
+eg_ca_exponential_decay,320,68.4559,107.5692,157.1365
+eg_ca_static,320,13.9266,133.6507,959.682
+eg_kruskal_exponential_decay,320,-25.6141,279.7283,1092.0887
+eg_kruskal_static,320,-100.1431,174.6796,174.43
